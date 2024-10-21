@@ -6,6 +6,7 @@ import characterFrontImage from '../assets/characterFront.PNG';
 import characterBackImage from '../assets/characterBack.PNG';
 import characterLeftImage from '../assets/characterLeft.PNG';
 import characterRightImage from '../assets/characterRight.PNG';
+import TextboxComponent from './TextboxComponent';
 
 
 
@@ -14,6 +15,7 @@ const GameCanvas = () => {
     const [character, setCharacter] = useState({ x: 650, y: 550, speed: 20, width: 120, height: 120 });
     const [currentImage, setCurrentImage] = useState(null);  // Track current image
     const [modalContent, setModalContent] = useState(null); // For pop-up interactions
+    const [textboxContent, setTextboxContent] = useState(null);
     
     const [characterFrontImg, setCharacterFrontImg] = useState(null);
     const [characterBackImg, setCharacterBackImg] = useState(null);
@@ -89,35 +91,145 @@ const GameCanvas = () => {
     const clickY = e.clientY - rect.top;
 
     // Example: Check if the user clicked near a specific object, like a piano
-    if (clickX > piano.x && clickX < piano.x+piano.width && clickY > piano.y && clickY < piano.y+piano.height) {
-      setModalContent("piano achievements");
+    if (clickX > piano.x && clickX < piano.x + piano.width && clickY > piano.y && clickY < piano.y + piano.height) {
+        setModalContent([
+            { type: 'text', text: 'Piano Achievements' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Piano Achievement Image' },
+            { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Piano Achievement Image' },
+            { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
+        ]);
     }
-    if (clickX > computer.x && clickX < computer.x+computer.width && clickY > computer.y && clickY < computer.y+computer.height) {
-        setModalContent("tech achievements");
+    
+    if (clickX > computer.x && clickX < computer.x + computer.width && clickY > computer.y && clickY < computer.y + computer.height) {
+        setModalContent([
+            { type: 'text', text: 'Projects' },
+            { type: 'text', text: 'Internships' },
+            { type: 'text', text: 'Rapyuta Robotics' },
+            { type: 'text', text: 'Loopx' },
+            { type: 'text', text: 'OpenPrinciples' },
+            { type: 'text', text: 'Projects' },
+            { type: 'text', text: 'ClockHacks' },
+            { type: 'text', text: 'FoodiEco' },
+            { type: 'text', text: 'HealThyme' },
+            { type: 'text', text: 'Shoebill' },
+            { type: 'text', text: "Slouchn't" },
+            { type: 'text', text: 'Remindicine' },
+            { type: 'text', text: 'ReadBetter' },
+            { type: 'text', text: 'OStranslate' },
+            { type: 'text', text: 'SignLingo' },
+            { type: 'youtube', id: 'AVIqqDKNNUA' },
+            { type: 'text', text: 'Feed the Child' },
+            { type: 'youtube', id: 'l8PHyBPLN_E' },
+            { type: 'text', text: 'Data Colonialism & Meta Research' },
+            { type: 'pdf', src: "documents/Gauss' Law ultimate study guide (1).pdf" },
+            { type: 'text', text: 'Onshape Gallery' },
+            { type: 'text', text: 'Blind Box Project' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Tech Achievement Image' },
+            
+        ]);
     }
-    if (clickX > danceFloor.x && clickX < danceFloor.x+danceFloor.width && clickY > danceFloor.y && clickY < danceFloor.y+danceFloor.height) {
-        setModalContent("dance achievements");
+    
+    if (clickX > danceFloor.x && clickX < danceFloor.x + danceFloor.width && clickY > danceFloor.y && clickY < danceFloor.y + danceFloor.height) {
+        setModalContent([
+            { type: 'text', text: 'Dance Achievements' },
+            { type: 'youtube', id: 'pFdQui83pLk' },
+        ]);
     }
-    if (clickX > easle.x && clickX < easle.x+easle.width && clickY > easle.y && clickY < easle.y+easle.height) {
-        setModalContent("artistic achievements");
+    
+    if (clickX > easle.x && clickX < easle.x + easle.width && clickY > easle.y && clickY < easle.y + easle.height) {
+        setModalContent([
+            { type: 'text', text: 'Illustration Gallery' },
+            { type: 'youtube', id: 'rzcSCLN9PmM' }, // Use the YouTube video ID
+            { type: 'youtube', id: '_uWFIWkj6hA' },
+            { type: 'youtube', id: '0gJHkqd7xwA' },
+            { type: 'youtube', id: 'b3xqs8ZuWso' },
+            { type: 'youtube', id: 'EJdPlGHerAE' },
+            { type: 'youtube', id: 'zYYP5FY3px4' },
+            { type: 'image', src: 'images/art/bangs_girl.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/basketball_design.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/blind_girl.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/bubble_tea.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/butterfly_girl.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/carton_girl.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/cheetah_girl.jgp.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/chick.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/chicken_design.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/chinese_bunny.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/clouds.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/egg_head.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/hazards_poster.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/keyclub_logo.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/keyclub.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/lama.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/morgan_freeman.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/no_tears_girl.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/nobody_cares.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/punk_girl.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/reading_girl.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/red_thread_guy.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/sculpture1.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/sculpture2.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/silenced_girl.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/skateboard.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/sleeping_girl.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/sunset_village.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/sunset.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/victorian_girls.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/waves.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/whale.jpg', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/wufc.png', alt: 'Artistic Achievement Image' },
+            { type: 'text', text: '3D Gallery' },
+            { type: 'youtube', id: 'ulzAFV6T5xw' },
+            { type: 'image', src: 'images/art/candygirl.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/goosex.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/jinx.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/pochita.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: 'images/art/skull_book.png', alt: 'Artistic Achievement Image' },
+        ]);
     }
-    if (clickX > guitar.x && clickX < guitar.x+guitar.width && clickY > guitar.y && clickY < guitar.y+guitar.height) {
-        setModalContent("guitar achievements");
+    
+    if (clickX > guitar.x && clickX < guitar.x + guitar.width && clickY > guitar.y && clickY < guitar.y + guitar.height) {
+        setModalContent([
+            { type: 'text', text: 'Guitar Achievements' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Guitar Achievement Image' },
+            { type: 'text', text: 'Your achievements in guitar playing, lessons, and performances.' },
+        ]);
     }
-    if (clickX > bookshelf.x && clickX < bookshelf.x+bookshelf.width && clickY > bookshelf.y && clickY < bookshelf.y+bookshelf.height) {
-        setModalContent("literature achievements");
+    
+    if (clickX > bookshelf.x && clickX < bookshelf.x + bookshelf.width && clickY > bookshelf.y && clickY < bookshelf.y + bookshelf.height) {
+        setModalContent([
+            { type: 'text', text: 'Literature Achievements' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Literature Achievement Image' },
+            { type: 'text', text: 'Books you’ve read, reviews, and written works.' },
+        ]);
     }
-    if (clickX > camera.x && clickX < camera.x+camera.width && clickY > camera.y && clickY < camera.y+camera.height) {
-        setModalContent("photography achievements");
+    
+    if (clickX > camera.x && clickX < camera.x + camera.width && clickY > camera.y && clickY < camera.y + camera.height) {
+        setModalContent([
+            { type: 'text', text: 'Photography Achievements' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Photography Achievement Image' },
+            { type: 'text', text: 'Photos you’ve taken, exhibitions, and awards in photography.' },
+        ]);
     }
-    if (clickX > metals.x && clickX < metals.x+metals.width && clickY > metals.y && clickY < metals.y+metals.height) {
-        setModalContent("awards");
+    
+    if (clickX > metals.x && clickX < metals.x + metals.width && clickY > metals.y && clickY < metals.y + metals.height) {
+        setModalContent([
+            { type: 'text', text: 'Awards' },
+            { type: 'image', src: 'images/characterBack.PNG', alt: 'Awards Image' },
+            { type: 'text', text: 'All the awards and recognitions you have received.' },
+        ]);
+    }
+    
+    if (clickX > character.x && clickX < character.x+character.width && clickY > character.y && clickY < character.y+character.height) {
+        setTextboxContent("Interact/learn about ME by clicking on or pressing 'Z' near any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here: c252wang@uwaterloo.ca / (519) 577-3709 / P.S. you can find for details on my computer.");
     }
 
   };
 
   // TODO: add another section for "z" button controls when character walks near element
   // add section for idle animation
+  // add a speech bubble near characters head with animation
 
 // Function to draw the grid with labels
 const drawGrid = (context, width, height) => {
@@ -149,7 +261,6 @@ const drawGrid = (context, width, height) => {
     }
   };
 
-
   // Function to draw on canvas
   const draw = (context) => {
     // Clear the canvas
@@ -166,7 +277,7 @@ const drawGrid = (context, width, height) => {
         context.drawImage(currentImage, character.x, character.y, character.width, character.height);
     }
     // Draw the grid with labels
-    drawGrid(context, canvasRef.current.width, canvasRef.current.height);
+    // drawGrid(context, canvasRef.current.width, canvasRef.current.height);
   };
 
   // Use the canvasRef to draw the game
@@ -307,6 +418,11 @@ const drawGrid = (context, width, height) => {
     ) {
         return;
     }
+    if (
+        newCharacter.y + character.height > canvasRef.current.height
+    ) {
+        return;
+    }
 
     // Update character position
     setCharacter(newCharacter);
@@ -324,6 +440,12 @@ const drawGrid = (context, width, height) => {
         <ModalComponent
           content={modalContent}
           onClose={() => setModalContent(null)} // Close the modal
+        />
+      )}
+      {textboxContent && (
+        <TextboxComponent
+          content={textboxContent}
+          onClose={() => setTextboxContent(null)} // Close the textbox
         />
       )}
     </div>
