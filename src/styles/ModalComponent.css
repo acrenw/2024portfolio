@@ -23,14 +23,17 @@
   }
   
   .modal-close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
+    position: sticky;
+    top: 0;
+    float: right;
     background: none;
     border: none;
+    color: black;
     font-size: 24px;
     cursor: pointer;
-    color: #333;
+    z-index: 1001; /* Ensures the button stays above modal content */
+    padding: 10px;
+    margin-right: -10px; /* Adjusts the position slightly to align with the corner */
   }
   
   .modal-close-button:hover {
@@ -39,16 +42,22 @@
   
   .modal-body {
     padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
   }
   
   .modal-section {
     margin-bottom: 20px; /* Adds space between sections */
   }
   
-  .modal-image {
+  .gallery-container {
+    column-count: 3;
+    column-gap: 10px;
+  }
+  
+  .gallery-item {
     width: 100%;
-    max-height: 300px; /* Ensures images don’t exceed a certain height */
-    object-fit: cover; /* Ensures image is properly scaled */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    break-inside: avoid;
   }
   
