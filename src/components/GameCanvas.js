@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/GameCanvas.css';
 import ModalComponent from './ModalComponent';
-import backgroundImage from '../assets/room.png';
+import backgroundImage from '../assets/room.PNG';
 import backgroundImageGlow from '../assets/roomGlow.png';
 import characterFrontImage from '../assets/characterFront.PNG';
 import characterBackImage from '../assets/characterBack.PNG';
