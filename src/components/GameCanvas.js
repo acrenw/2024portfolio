@@ -105,6 +105,8 @@ const GameCanvas = () => {
     const clickX = e.clientX - rect.left;
     const clickY = e.clientY - rect.top;
 
+    // TODO: make this less repetitive, make a f const checkClickAndSetModal = (clickX, clickY, x, y, width, height, modalContent) => {}
+    // ex. pianoModalContent = [{},{},{}]
     if (clickX > piano.x && clickX < piano.x + piano.width && clickY > piano.y && clickY < piano.y + piano.height) {
         setModalContent([
             { type: 'text', text: 'Piano Achievements' },
@@ -169,42 +171,55 @@ const GameCanvas = () => {
         setModalContent([
             { type: 'text', text: 'Dance Achievements' },
             { type: 'text', text: 'Instagram dance account: @helo_moshi' },
-            { type: 'youtube', id: 'Oxr0JxiVCso' },
-            // { type: 'video', src: 'images/dance/accendio.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/accendio-group-photo.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/baddie-group-photo.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/cupid.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/dbd-arm-flower.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/dice.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/ding-dang.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/gashina.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/get-back-dance-photo.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/get-back.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/hey-mama.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/hype-boy.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/istj.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/kabukicho-group-photo.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/ladida.mp4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/lhss-group-photo-1.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/lhss-group-photo-2.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: 'Oxr0JxiVCso' }, //baddie
+            { type: 'image', src: 'images/dance/baddie-group-photo.jpg', alt: 'Baddie performance in Lazardis Hall, Laurier University, Waterloo.' },
+            { type: 'youtube', id: 'sajsWQKAiek' }, //accendio
+            { type: 'image', src: 'images/dance/accendio-group-photo.jpg', alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: 'images/dance/kabukicho-group-photo.jpg', alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
+            { type: 'youtube', id: 'yK9jC1jydWI' }, //cupid
+            { type: 'youtube', id: 'pCdh_bfSy5M' }, //gashina
+            { type: 'image', src: 'images/dance/get-back-dance-photo.jpg', alt: 'Dance practice in XuanSe dance studio.' },
+            { type: 'youtube', id: '9tioZwmZ1lk' }, //get back
+            { type: 'youtube', id: 'MXAAh60NQss' }, //hype boy
+            { type: 'youtube', id: 'uz8ux7EPHwI' }, //istj
+            { type: 'youtube', id: 'GYqEMHqhrLs' }, //ladida
+            { type: 'youtube', id: 'niTvaxbkku8' }, //hey mama
+            { type: 'image', src: 'images/dance/lhss-group-photo-1.jpg', alt: 'LHSS dance team group photo.' },
+            { type: 'image', src: 'images/dance/lhss-group-photo-2.jpg', alt: 'LHSS dance team group photo.' },
+            { type: 'image', src: 'images/dance/dbd-arm-flower.jpg', alt: 'LHSS Double Blue Day performance snap shot.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/panorama.MOV', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/pink-venom-zoom.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/pink-venom.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/pretty-girls.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/quack-quack.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/santa-tell-me.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/scoop.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/shape-of-you.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/sukidakara.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/tambourine.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/violeta.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: 'images/dance/violeta.jpg', alt: 'LHSS end-of-year Violeta performance snap shot.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/weapon.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            // { type: 'video', src: 'images/dance/xiao-cheng-xia-tian.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/xuan-se-dance-photo.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/xuan-se-dance-photo-1.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/xuan-se-dance-photo-2.jpg', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: 'pFdQui83pLk' }, //xiao cheng xia tian
+            { type: 'image', src: 'images/dance/xuan-se-dance-photo.jpg', alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: 'images/dance/xuan-se-dance-photo-1.jpg', alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: 'images/dance/xuan-se-dance-photo-2.jpg', alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/xuan-se.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/young-boss.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             // { type: 'video', src: 'images/dance/zoom.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
         ]);
     }
@@ -441,6 +456,14 @@ const GameCanvas = () => {
   //   return () => clearInterval(intervalId);
   // }, [currentBgImage, isFadingIn, bgImg, bgImgGlow]);
 
+  function isColliding(obj1, obj2) {
+    return (
+      obj1.x < obj2.x + obj2.width &&
+      obj1.x + obj1.width > obj2.x &&
+      obj1.y < obj2.y + obj2.height &&
+      obj1.y + obj1.height > obj2.y
+    );
+  }  
 
   // Click events
   useEffect(() => {
@@ -460,119 +483,42 @@ const GameCanvas = () => {
   }, [character, currentImage]);
 
   const handleKeyDown = (e) => {
-  const newCharacter = { ...character };
-  switch (e.key) {
-    case 'ArrowUp':
-      newCharacter.y -= character.speed;
-      setCurrentImage(characterBackImg);
-      break;
-    case 'ArrowDown':
-      newCharacter.y += character.speed;
-      setCurrentImage(characterFrontImg);
-      break;
-    case 'ArrowLeft':
-      newCharacter.x -= character.speed;
-      setCurrentImage(characterLeftImg);
-      break;
-    case 'ArrowRight':
-      newCharacter.x += character.speed;
-      setCurrentImage(characterRightImg);
-      break;
-    default:
-      break;
-  }
+    const newCharacter = { ...character };
+    switch (e.key) {
+      case 'ArrowUp':
+        newCharacter.y -= character.speed;
+        setCurrentImage(characterBackImg);
+        break;
+      case 'ArrowDown':
+        newCharacter.y += character.speed;
+        setCurrentImage(characterFrontImg);
+        break;
+      case 'ArrowLeft':
+        newCharacter.x -= character.speed;
+        setCurrentImage(characterLeftImg);
+        break;
+      case 'ArrowRight':
+        newCharacter.x += character.speed;
+        setCurrentImage(characterRightImg);
+        break;
+      default:
+        break;
+    }
 
     // Check for collision
-    // if (
-    //   newCharacter.x < danceFloor.x + danceFloor.width &&
-    //   newCharacter.x + character.width > danceFloor.x &&
-    //   newCharacter.y < danceFloor.y + danceFloor.height &&
-    //   newCharacter.y + character.height > danceFloor.y
-    // ) {
-    //   return
-    // }
-    if (
-        newCharacter.x < piano.x + piano.width &&
-        newCharacter.x + character.width > piano.x &&
-        newCharacter.y < piano.y + piano.height &&
-        newCharacter.y + character.height > piano.y
-      ) {
+    // Array of objects to check for collisions
+    const obstacles = [piano, computer, easle, guitar, bookshelf, camera, metals, bed, shelf]; //danceFloor
+
+    for (let obstacle of obstacles) {
+      if (isColliding(newCharacter, obstacle)) {
         return;
+      }
     }
-    if (
-        newCharacter.x < computer.x + computer.width &&
-        newCharacter.x + character.width > computer.x &&
-        newCharacter.y < computer.y + computer.height &&
-        newCharacter.y + character.height > computer.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < easle.x + easle.width &&
-        newCharacter.x + character.width > easle.x &&
-        newCharacter.y < easle.y + easle.height &&
-        newCharacter.y + character.height > easle.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < guitar.x + guitar.width &&
-        newCharacter.x + character.width > guitar.x &&
-        newCharacter.y < guitar.y + guitar.height &&
-        newCharacter.y + character.height > guitar.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < bookshelf.x + bookshelf.width &&
-        newCharacter.x + character.width > bookshelf.x &&
-        newCharacter.y < bookshelf.y + bookshelf.height &&
-        newCharacter.y + character.height > bookshelf.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < camera.x + camera.width &&
-        newCharacter.x + character.width > camera.x &&
-        newCharacter.y < camera.y + camera.height &&
-        newCharacter.y + character.height > camera.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < metals.x + metals.width &&
-        newCharacter.x + character.width > metals.x &&
-        newCharacter.y < metals.y + metals.height &&
-        newCharacter.y + character.height > metals.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < bed.x + bed.width &&
-        newCharacter.x + character.width > bed.x &&
-        newCharacter.y < bed.y + bed.height &&
-        newCharacter.y + character.height > bed.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.x < shelf.x + shelf.width &&
-        newCharacter.x + character.width > shelf.x &&
-        newCharacter.y < shelf.y + shelf.height &&
-        newCharacter.y + character.height > shelf.y
-      ) {
-        return;
-    }
-    if (
-        newCharacter.y < wallHorizon
-    ) {
-        return;
-    }
-    if (
-        newCharacter.y + character.height > canvasRef.current.height
-    ) {
-        return;
-    }
+    // Check boundary collisions
+    if (newCharacter.y < wallHorizon || 
+      newCharacter.y + character.height > canvasRef.current.height) {
+    return;
+  }
 
     // Update character image
     setCharacter(newCharacter);
