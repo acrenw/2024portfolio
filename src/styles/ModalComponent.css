@@ -61,3 +61,35 @@
     break-inside: avoid;
   }
   
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease; /* Brightness transition */
+  }
+  
+  .caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fade transition */
+  }
+  
+  /* Hover effect */
+  .image-container:hover img {
+    filter: brightness(0.6); /* Dim */
+  }
+  
+  .image-container:hover .caption {
+    opacity: 1; /* Show caption */
+  }

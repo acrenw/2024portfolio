@@ -20,7 +20,14 @@ const ModalComponent = ({ content, onClose }) => {
                 if (section.type === 'image') {
                   return (
                     <div key={index} className="gallery-item">
-                      <img src={section.src} alt={section.alt} style={{ maxWidth: '100%', height: 'auto' }} />
+                      <div className="image-container">
+                        <img src={section.src} alt={section.alt} style={{ maxWidth: '100%', height: 'auto' }} />
+                        {section.caption && (
+                          <div className="caption">
+                            {section.caption}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   );
                 }

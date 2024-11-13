@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/GameCanvas.css';
 import ModalComponent from './ModalComponent';
+import speechBubbleImage from '../assets/speechBubble.png';
 import backgroundImage from '../assets/room.PNG';
 import backgroundImageGlow from '../assets/roomGlow.png';
 import characterFrontImage from '../assets/characterFront.PNG';
@@ -12,15 +13,17 @@ import TextboxComponent from './TextboxComponent';
 // TODO: make this bilingual
 //       separate this gigantic file into multiple ones, probably one file for each object??
 //       make bg image have glowing animation on clickable objects
-
+//       make prettier
 
 const GameCanvas = () => {
     const canvasRef = useRef(null);
     const [modalContent, setModalContent] = useState(null); // For pop-up interactions
     const [textboxContent, setTextboxContent] = useState(null);
+    const [speechBubbleImg, setSpeechBubbleImg] = useState();
+    // TODO: add a characterdirection here
     const [character, setCharacter] = useState({ x: 650, y: 550, speed: 20, width: 120, height: 120 });
-    const [currentImage, setCurrentImage] = useState(null);  // Track current image
-    const [currentBgImage, setCurrentBgImage] = useState(null);
+    const [currentCharacterImg, setCurrentCharacterImg] = useState(null);  // Track current image
+    const [currentBgImg, setCurrentBgImg] = useState(null);
     // const [opacity, setOpacity] = useState(1);
     // const [isFadingIn, setIsFadingIn] = useState(true);
     
@@ -35,6 +38,10 @@ const GameCanvas = () => {
     
     // Load images
     useEffect(() => {
+      const speechBubbleImg = new Image()
+      speechBubbleImg.src = speechBubbleImage;
+      speechBubbleImg.onload = () => setSpeechBubbleImg(speechBubbleImg)
+
       const characterFrontImg = new Image();
       characterFrontImg.src = characterFrontImage;
       characterFrontImg.onload = () => setCharacterFrontImg(characterFrontImg);
@@ -60,14 +67,19 @@ const GameCanvas = () => {
       bgImgGlow.onload = () => setBgImgGlow(bgImgGlow);
   
       // Set the initial images
-      setCurrentImage(characterFrontImg);
-      setCurrentBgImage(bgImg);
+      setCurrentCharacterImg(characterFrontImg);
+      setCurrentBgImg(bgImg);
 
     }, []);
   
 
 
   // Set objects' position and size
+  // TODO: make this simpler with
+  //  const objects = [
+  //       { x: 80, y: 100, name: 'Piano', content: 'Piano Achievements' OR content: pianoModalContent},
+  //       { x: 120, y: 100, name: 'Metals', content: 'Metals Achievements' }
+  // ];
   const piano = { x: 920, y: 570, width: 350, height: 160 }; 
   const computer = { x: 240, y: 130, width: 270, height: 310*2/3 }; 
   const danceFloor = { x: 210, y: 570, width: 205, height: 160 };
@@ -78,6 +90,7 @@ const GameCanvas = () => {
   const metals = { x: 1090, y: 50, width: 190, height: 70 };  
   const bed = { x: 1030, y: 220, width: 185, height: 200 };  
   const shelf = { x: 1230, y: 290, width: 150, height: 100/2 };  
+  const speechBubble = { width: 70, height: 56 }
   const wallHorizon = 310;
  
   const updateCanvasSize = () => {
@@ -112,11 +125,12 @@ const GameCanvas = () => {
             { type: 'text', text: 'Piano Achievements' },
             // { type: 'text', text: 'Instagram music account: @' },
             { type: 'text', text: 'Level 8 Piano First Class Honours The Royal Conservatory of Music Issued Jul 2021' },
-            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, alt: 'Piano Achievement Image' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, caption: 'Piano Achievement Image' },
             // { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
-            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, alt: 'Piano Achievement Image' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, caption: 'Piano Achievement Image' },
             // { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
         ]);
+        setTextboxContent(""); 
     }
     
     if (clickX > computer.x && clickX < computer.x + computer.width && clickY > computer.y && clickY < computer.y + computer.height) {
@@ -162,32 +176,32 @@ const GameCanvas = () => {
             { type: 'text', text: 'Onshape Gallery' },
             { type: 'text', text: 'Blind Box Project' },
             { type: 'pdf', src: 'documents/2025_master_resume__simp_.pdf' },
-            
         ]);
+        setTextboxContent(""); 
     }
     
-    // TODO: add interactive captions
+    // TODO: add interactive captions & reorganize
     if (clickX > danceFloor.x && clickX < danceFloor.x + danceFloor.width && clickY > danceFloor.y && clickY < danceFloor.y + danceFloor.height) {
         setModalContent([
             { type: 'text', text: 'Dance Achievements' },
             { type: 'text', text: 'Instagram dance account: @helo_moshi' },
             { type: 'youtube', id: 'Oxr0JxiVCso' }, //baddie
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/baddie-group-photo.jpg`, alt: 'Baddie performance in Lazardis Hall, Laurier University, Waterloo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/baddie-group-photo.jpg`, caption: 'Baddie performance in Lazardis Hall, Laurier University, Waterloo.' },
             { type: 'youtube', id: 'sajsWQKAiek' }, //accendio
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/accendio-group-photo.jpg`, alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/kabukicho-group-photo.jpg`, alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/accendio-group-photo.jpg`, caption: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/kabukicho-group-photo.jpg`, caption: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
             { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             { type: 'youtube', id: 'yK9jC1jydWI' }, //cupid
             { type: 'youtube', id: 'pCdh_bfSy5M' }, //gashina
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/get-back-dance-photo.jpg`, alt: 'Dance practice in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/get-back-dance-photo.jpg`, caption: 'Dance practice in XuanSe dance studio.' },
             { type: 'youtube', id: '9tioZwmZ1lk' }, //get back
             { type: 'youtube', id: 'MXAAh60NQss' }, //hype boy
             { type: 'youtube', id: 'uz8ux7EPHwI' }, //istj
             { type: 'youtube', id: 'GYqEMHqhrLs' }, //ladida
             { type: 'youtube', id: 'niTvaxbkku8' }, //hey mama
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-1.jpg`, alt: 'LHSS dance team group photo.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-2.jpg`, alt: 'LHSS dance team group photo.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/dbd-arm-flower.jpg`, alt: 'LHSS Double Blue Day performance snap shot.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-1.jpg`, caption: 'LHSS dance team group photo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-2.jpg`, caption: 'LHSS dance team group photo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/dbd-arm-flower.jpg`, caption: 'LHSS Double Blue Day performance snap shot.' },
             { type: 'youtube', id: 'GAG_lFFnSRU' }, //panorama
             { type: 'youtube', id: 'oKd_tsLKM3U' }, //pink venom clip
             { type: 'youtube', id: 'Yy0YjQI83bk' }, //pink venom
@@ -198,19 +212,19 @@ const GameCanvas = () => {
             { type: 'youtube', id: '-2NCYs5t4to' }, //shape of you
             { type: 'youtube', id: 'zdRHr963_LE' }, //sukidakara
             { type: 'youtube', id: 'DWvmQFWLwLY' }, //tambourine
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/violeta.jpg`, alt: 'LHSS end-of-year Violeta performance snap shot.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/violeta.jpg`, caption: 'LHSS end-of-year Violeta performance snap shot.' },
             { type: 'youtube', id: 'y2zZfOGaK5M' }, //weapon
             { type: 'youtube', id: 'pFdQui83pLk' }, //xiao cheng xia tian
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo.jpg`, alt: 'Dance practice snap shot in XuanSe dance studio.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-1.jpg`, alt: 'Dance practice snap shot in XuanSe dance studio.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-2.jpg`, alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-1.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-2.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
             { type: 'youtube', id: 'bO8DzvtGjto' }, //xuan se live performance
             { type: 'youtube', id: 'dqluTAhGLBI' }, //young boss
             { type: 'youtube', id: 'pOXwRIn1dnY' }, //zoom
         ]);
+        setTextboxContent(""); 
     }
     
-    // TODO: change alt
     if (clickX > easle.x && clickX < easle.x + easle.width && clickY > easle.y && clickY < easle.y + easle.height) {
         setModalContent([
             { type: 'text', text: 'Instagram art account: @acrenw' },
@@ -221,55 +235,57 @@ const GameCanvas = () => {
             { type: 'youtube', id: 'b3xqs8ZuWso' },
             { type: 'youtube', id: 'EJdPlGHerAE' },
             { type: 'youtube', id: 'zYYP5FY3px4' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bangs_girl.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/basketball_design.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/blind_girl.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bubble_tea.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/butterfly_girl.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/carton_girl.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/cheetah_girl.jgp.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chick.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chicken_design.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chinese_bunny.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/clouds.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/egg_head.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/hazards_poster.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub_logo.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/lama.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/morgan_freeman.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/no_tears_girl.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/nobody_cares.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/punk_girl.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/reading_girl.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/red_thread_guy.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture1.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture2.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/silenced_girl.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skateboard.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sleeping_girl.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset_village.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/victorian_girls.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/waves.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/whale.jpg`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/wufc.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bangs_girl.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/basketball_design.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/blind_girl.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bubble_tea.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/butterfly_girl.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/carton_girl.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/cheetah_girl.jgp.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chick.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chicken_design.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chinese_bunny.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/clouds.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/egg_head.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/hazards_poster.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub_logo.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/lama.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/morgan_freeman.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/no_tears_girl.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/nobody_cares.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/punk_girl.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/reading_girl.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/red_thread_guy.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture1.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture2.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/silenced_girl.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skateboard.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sleeping_girl.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset_village.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/victorian_girls.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/waves.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/whale.jpg`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/wufc.png`, caption: 'Artistic Achievement Image' },
             { type: 'text', text: '3D Gallery' },
             { type: 'youtube', id: 'ulzAFV6T5xw' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/candygirl.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/goosex.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/jinx.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/pochita.png`, alt: 'Artistic Achievement Image' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skull_book.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/candygirl.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/goosex.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/jinx.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/pochita.png`, caption: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skull_book.png`, caption: 'Artistic Achievement Image' },
         ]);
+        setTextboxContent(""); 
     }
     
     // if (clickX > guitar.x && clickX < guitar.x + guitar.width && clickY > guitar.y && clickY < guitar.y + guitar.height) {
     //     setModalContent([
     //         { type: 'text', text: 'Guitar Achievements' },
-    //         { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, alt: 'Guitar Achievement Image' },
+    //         { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, caption: 'Guitar Achievement Image' },
     //         { type: 'text', text: 'Instagram music account: @.' },
     //     ]);
+    //     setTextboxContent(""); 
     // }
     
     if (clickX > bookshelf.x && clickX < bookshelf.x + bookshelf.width && clickY > bookshelf.y && clickY < bookshelf.y + bookshelf.height) {
@@ -279,33 +295,34 @@ const GameCanvas = () => {
             { type: 'text', text: 'The  Polar Express short story.' },
             { type: 'text', text: 'My poetry & anthology.' },
         ]);
+        setTextboxContent(""); 
     }
     
     if (clickX > camera.x && clickX < camera.x + camera.width && clickY > camera.y && clickY < camera.y + camera.height) {
         setModalContent([
             { type: 'text', text: 'Photography Achievements' },
             { type: 'text', text: 'Instagram photography account: @a.pgy_t.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/before-the-show.jpg`, alt: 'Before the Show | 上台之前' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bridge.JPG`, alt: 'Bridge' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bubble-man.JPG`, alt: 'Bubble Man' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/conformity-bridge.JPG`, alt: 'Conformity Bridge | 往来皆人不见己' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/delivery-man.JPG`, alt: 'He Wilts so the Flowers Bloom | 送餐夕阳巷，我本送花郎' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/fence.JPG`, alt: 'Fence' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/library.JPG`, alt: 'Grind or Die' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/logo.JPG`, alt: 'Logo' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lonely.JPG`, alt: 'Lonely' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, alt: 'Lungs' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/memory-shop.JPG`, alt: 'The Memory Shop' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mirror.JPG`, alt: 'Reflection' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mom.jpg`, alt: 'Mom' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/slippery.JPG`, alt: 'Slipping on Sunlight' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/snowing-temple.JPG`, alt: 'Bubble Snow' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/thin-house.JPG`, alt: 'Thin House' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tingzi-bridge.jpg`, alt: 'Another Bridge' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tip.jpg`, alt: 'Acute' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/water-fall.JPG`, alt: 'Waterfall' },
-
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/before-the-show.jpg`, caption: 'Before the Show | 上台之前' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bridge.JPG`, caption: 'Bridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bubble-man.JPG`, caption: 'Bubble Man' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/conformity-bridge.JPG`, caption: 'Conformity Bridge | 往来皆人不见己' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/delivery-man.JPG`, caption: 'He Wilts so the Flowers Bloom | 送餐夕阳巷，我本送花郎' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/fence.JPG`, caption: 'Fence' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/library.JPG`, caption: 'Grind or Die' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/logo.JPG`, caption: 'Logo' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lonely.JPG`, caption: 'Lonely' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, caption: 'Lungs' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/memory-shop.JPG`, caption: 'The Memory Shop' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mirror.JPG`, caption: 'Reflection' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mom.jpg`, caption: 'Mom' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/slippery.JPG`, caption: 'Slipping on Sunlight' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/snowing-temple.JPG`, caption: 'Bubble Snow' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/thin-house.JPG`, caption: 'Thin House' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tingzi-bridge.jpg`, caption: 'Another Bridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tip.jpg`, caption: 'Acute' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/water-fall.JPG`, caption: 'Waterfall' },
         ]);
+        setTextboxContent(""); 
     }
     
     if (clickX > metals.x && clickX < metals.x + metals.width && clickY > metals.y && clickY < metals.y + metals.height) {
@@ -317,22 +334,24 @@ const GameCanvas = () => {
             { type: 'text', text: 'Certificate of Achievement Certificate of Achievement Issued by KW Chinese School · Jun 2016 In Recognition of Academic Excellence' },
             { type: 'text', text: 'Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement in 2018/2019 National Student Short-Story Contest ' },
           ]);
+          setTextboxContent(""); 
     }
     
-    if (clickX > character.x && clickX < character.x+character.width && clickY > character.y && clickY < character.y+character.height) {
-        setTextboxContent("Interact/learn about ME by clicking on or pressing 'Z' near any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here: c252wang@uwaterloo.ca / (519) 577-3709 / P.S. you can find for details on my computer.");
-    }
+    if (clickX > character.x && clickX < character.x+character.width && clickY > character.y && clickY < character.y+character.height || clickX > (character.x + character.width - 5) && clickX < (character.x + character.width - 5 + speechBubble.width) && clickY > (character.y - 15) && clickY < (character.y - 15 + speechBubble.height)) {
+      setTextboxContent("Interact/learn about ME by clicking on any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | (519) 577-3709\nP.S. you can find for details on my computer.");
+      // setTextboxContent("Interact/learn about ME by clicking on or pressing 'Z' near any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | (519) 577-3709\nP.S. you can find for details on my computer.");
 
+    }
   };
-    // TODO: make textbox disappear when popup window appears
+
     // Set initial textbox
     useEffect(() => {
-        setTextboxContent("Interact/learn about ME by clicking on or pressing 'Z' near any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | (519) 577-3709\nP.S. you can find for details on my computer.");
+      setTextboxContent("Interact/learn about ME by clicking on any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | (519) 577-3709\nP.S. you can find for details on my computer.");
+      // setTextboxContent("Interact/learn about ME by clicking on or pressing 'Z' near any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | (519) 577-3709\nP.S. you can find for details on my computer.");
     }, []);
 
   // TODO: add another section for "z" button controls when character walks near element
-  //       add section for idle animation
-  //       add a speech bubble near characters head with animation
+  //       add section for idle animation (character and speech bubble, amke entire animation stuff an f)
 
 // // Function to draw the grid with labels
 // const drawGrid = (context, width, height) => {
@@ -371,16 +390,22 @@ const GameCanvas = () => {
 
     
     // Background
-    if (currentBgImage) {
+    if (currentBgImg) {
       // context.globalAlpha = opacity;
-      context.drawImage(currentBgImage, 0, 0, canvasRef.current.width, canvasRef.current.height);
+      context.drawImage(currentBgImg, 0, 0, canvasRef.current.width, canvasRef.current.height);
       // context.globalAlpha = 1; // Reset alpha for other drawings
     }
     
     // Character
-    if (currentImage) {
-        context.drawImage(currentImage, character.x, character.y, character.width, character.height);
+    if (currentCharacterImg) {
+        context.drawImage(currentCharacterImg, character.x, character.y, character.width, character.height);
     }
+
+    // Speech bubble
+    if (speechBubbleImg && !textboxContent) {
+      context.drawImage(speechBubbleImg, character.x + character.width - 5, character.y - 15, speechBubble.width, speechBubble.height);
+    }
+    
     // Grid
     // drawGrid(context, canvasRef.current.width, canvasRef.current.height);
   };
@@ -392,14 +417,14 @@ const GameCanvas = () => {
     if (context) {
       draw(context);
     }
-  }, [character, currentImage, currentBgImage]);  // Redraw when character or currentImage changes
+  }, [character, currentCharacterImg, currentBgImg]);  // Redraw when character or currentCharacterImg changes
 
 
   // TODO: add fading animation
   // Background image animation
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentBgImage((prevBgImg) => (prevBgImg === bgImg ? bgImgGlow : bgImg));
+      setCurrentBgImg((prevBgImg) => (prevBgImg === bgImg ? bgImgGlow : bgImg));
     }, 500); // Change every 0.5 seconds
 
     return () => clearInterval(intervalId);
@@ -409,7 +434,7 @@ const GameCanvas = () => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
     draw(context);
-  }, [currentBgImage]); // Redraw whenever the current background image changes
+  }, [currentBgImg]); // Redraw whenever the current background image changes
 
 
   // // Fading animation
@@ -422,13 +447,13 @@ const GameCanvas = () => {
   //       setOpacity((prevOpacity) => {
   //         // Change opacity based on fading direction
   //         const newOpacity = prevOpacity + (isFadingIn ? 0.05 : -0.05);
-  //         draw(context, currentBgImage, Math.max(0, Math.min(1, newOpacity)));
+  //         draw(context, currentBgImg, Math.max(0, Math.min(1, newOpacity)));
 
   //         if (newOpacity <= 0 || newOpacity >= 1) {
   //           clearInterval(fadeInterval);
   //           // Change fade direction and switch images when fully faded
   //           setIsFadingIn(!isFadingIn);
-  //           setCurrentBgImage((prevImage) => (prevImage === bgImg ? bgImgGlow : bgImg));
+  //           setCurrentBgImg((prevImage) => (prevImage === bgImg ? bgImgGlow : bgImg));
   //         }
 
   //         return Math.max(0, Math.min(1, newOpacity));
@@ -440,7 +465,7 @@ const GameCanvas = () => {
   //   const intervalId = setInterval(fade, 500); // Change image every 0.5 seconds
 
   //   return () => clearInterval(intervalId);
-  // }, [currentBgImage, isFadingIn, bgImg, bgImgGlow]);
+  // }, [currentBgImg, isFadingIn, bgImg, bgImgGlow]);
 
   function isColliding(obj1, obj2) {
     return (
@@ -466,26 +491,26 @@ const GameCanvas = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [character, currentImage]);
+  }, [character, currentCharacterImg]);
 
   const handleKeyDown = (e) => {
     const newCharacter = { ...character };
     switch (e.key) {
       case 'ArrowUp':
         newCharacter.y -= character.speed;
-        setCurrentImage(characterBackImg);
+        setCurrentCharacterImg(characterBackImg);
         break;
       case 'ArrowDown':
         newCharacter.y += character.speed;
-        setCurrentImage(characterFrontImg);
+        setCurrentCharacterImg(characterFrontImg);
         break;
       case 'ArrowLeft':
         newCharacter.x -= character.speed;
-        setCurrentImage(characterLeftImg);
+        setCurrentCharacterImg(characterLeftImg);
         break;
       case 'ArrowRight':
         newCharacter.x += character.speed;
-        setCurrentImage(characterRightImg);
+        setCurrentCharacterImg(characterRightImg);
         break;
       default:
         break;
