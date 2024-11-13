@@ -3,7 +3,7 @@ import GameCanvas from './components/GameCanvas';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/2024portfolio">
       <Routes>
         <Route path="/" exact element={<GameCanvas />} />
       </Routes>
