@@ -112,9 +112,9 @@ const GameCanvas = () => {
             { type: 'text', text: 'Piano Achievements' },
             // { type: 'text', text: 'Instagram music account: @' },
             { type: 'text', text: 'Level 8 Piano First Class Honours The Royal Conservatory of Music Issued Jul 2021' },
-            // { type: 'image', src: 'images/characterBack.PNG', alt: 'Piano Achievement Image' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, alt: 'Piano Achievement Image' },
             // { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
-            // { type: 'image', src: 'images/characterBack.PNG', alt: 'Piano Achievement Image' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, alt: 'Piano Achievement Image' },
             // { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
         ]);
     }
@@ -172,55 +172,41 @@ const GameCanvas = () => {
             { type: 'text', text: 'Dance Achievements' },
             { type: 'text', text: 'Instagram dance account: @helo_moshi' },
             { type: 'youtube', id: 'Oxr0JxiVCso' }, //baddie
-            { type: 'image', src: 'images/dance/baddie-group-photo.jpg', alt: 'Baddie performance in Lazardis Hall, Laurier University, Waterloo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/baddie-group-photo.jpg`, alt: 'Baddie performance in Lazardis Hall, Laurier University, Waterloo.' },
             { type: 'youtube', id: 'sajsWQKAiek' }, //accendio
-            { type: 'image', src: 'images/dance/accendio-group-photo.jpg', alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/kabukicho-group-photo.jpg', alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/accendio-group-photo.jpg`, alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/kabukicho-group-photo.jpg`, alt: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
             { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
             { type: 'youtube', id: 'yK9jC1jydWI' }, //cupid
             { type: 'youtube', id: 'pCdh_bfSy5M' }, //gashina
-            { type: 'image', src: 'images/dance/get-back-dance-photo.jpg', alt: 'Dance practice in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/get-back-dance-photo.jpg`, alt: 'Dance practice in XuanSe dance studio.' },
             { type: 'youtube', id: '9tioZwmZ1lk' }, //get back
             { type: 'youtube', id: 'MXAAh60NQss' }, //hype boy
             { type: 'youtube', id: 'uz8ux7EPHwI' }, //istj
             { type: 'youtube', id: 'GYqEMHqhrLs' }, //ladida
             { type: 'youtube', id: 'niTvaxbkku8' }, //hey mama
-            { type: 'image', src: 'images/dance/lhss-group-photo-1.jpg', alt: 'LHSS dance team group photo.' },
-            { type: 'image', src: 'images/dance/lhss-group-photo-2.jpg', alt: 'LHSS dance team group photo.' },
-            { type: 'image', src: 'images/dance/dbd-arm-flower.jpg', alt: 'LHSS Double Blue Day performance snap shot.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/panorama.MOV', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/pink-venom-zoom.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/pink-venom.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/pretty-girls.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/quack-quack.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/santa-tell-me.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/scoop.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/shape-of-you.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/sukidakara.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/tambourine.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'image', src: 'images/dance/violeta.jpg', alt: 'LHSS end-of-year Violeta performance snap shot.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/weapon.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-1.jpg`, alt: 'LHSS dance team group photo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-2.jpg`, alt: 'LHSS dance team group photo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/dbd-arm-flower.jpg`, alt: 'LHSS Double Blue Day performance snap shot.' },
+            { type: 'youtube', id: 'GAG_lFFnSRU' }, //panorama
+            { type: 'youtube', id: 'oKd_tsLKM3U' }, //pink venom clip
+            { type: 'youtube', id: 'Yy0YjQI83bk' }, //pink venom
+            { type: 'youtube', id: 'ZQEZF117JaY' }, //pretty girls
+            { type: 'youtube', id: 'brI-BJiU6VM' }, //quack quack
+            { type: 'youtube', id: 'SC-YZvHMA8g' }, //santa tell me
+            { type: 'youtube', id: 'n6tXUaSRiOE' }, //scoop
+            { type: 'youtube', id: '-2NCYs5t4to' }, //shape of you
+            { type: 'youtube', id: 'zdRHr963_LE' }, //sukidakara
+            { type: 'youtube', id: 'DWvmQFWLwLY' }, //tambourine
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/violeta.jpg`, alt: 'LHSS end-of-year Violeta performance snap shot.' },
+            { type: 'youtube', id: 'y2zZfOGaK5M' }, //weapon
             { type: 'youtube', id: 'pFdQui83pLk' }, //xiao cheng xia tian
-            { type: 'image', src: 'images/dance/xuan-se-dance-photo.jpg', alt: 'Dance practice snap shot in XuanSe dance studio.' },
-            { type: 'image', src: 'images/dance/xuan-se-dance-photo-1.jpg', alt: 'Dance practice snap shot in XuanSe dance studio.' },
-            { type: 'image', src: 'images/dance/xuan-se-dance-photo-2.jpg', alt: 'Dance practice snap shot in XuanSe dance studio.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/xuan-se.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/young-boss.MP4', alt: 'Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, //dice
-            // { type: 'video', src: 'images/dance/zoom.mov', alt: 'Accendio performance in Kabukicho, Tokyo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo.jpg`, alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-1.jpg`, alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-2.jpg`, alt: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'youtube', id: 'bO8DzvtGjto' }, //xuan se live performance
+            { type: 'youtube', id: 'dqluTAhGLBI' }, //young boss
+            { type: 'youtube', id: 'pOXwRIn1dnY' }, //zoom
         ]);
     }
     
@@ -235,53 +221,53 @@ const GameCanvas = () => {
             { type: 'youtube', id: 'b3xqs8ZuWso' },
             { type: 'youtube', id: 'EJdPlGHerAE' },
             { type: 'youtube', id: 'zYYP5FY3px4' },
-            { type: 'image', src: 'images/art/bangs_girl.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/basketball_design.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/blind_girl.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/bubble_tea.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/butterfly_girl.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/carton_girl.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/cheetah_girl.jgp.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/chick.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/chicken_design.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/chinese_bunny.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/clouds.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/egg_head.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/hazards_poster.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/keyclub_logo.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/keyclub.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/lama.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/morgan_freeman.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/no_tears_girl.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/nobody_cares.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/punk_girl.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/reading_girl.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/red_thread_guy.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/sculpture1.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/sculpture2.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/silenced_girl.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/skateboard.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/sleeping_girl.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/sunset_village.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/sunset.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/victorian_girls.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/waves.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/whale.jpg', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/wufc.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bangs_girl.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/basketball_design.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/blind_girl.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bubble_tea.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/butterfly_girl.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/carton_girl.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/cheetah_girl.jgp.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chick.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chicken_design.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chinese_bunny.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/clouds.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/egg_head.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/hazards_poster.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub_logo.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/lama.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/morgan_freeman.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/no_tears_girl.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/nobody_cares.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/punk_girl.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/reading_girl.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/red_thread_guy.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture1.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture2.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/silenced_girl.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skateboard.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sleeping_girl.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset_village.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/victorian_girls.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/waves.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/whale.jpg`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/wufc.png`, alt: 'Artistic Achievement Image' },
             { type: 'text', text: '3D Gallery' },
             { type: 'youtube', id: 'ulzAFV6T5xw' },
-            { type: 'image', src: 'images/art/candygirl.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/goosex.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/jinx.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/pochita.png', alt: 'Artistic Achievement Image' },
-            { type: 'image', src: 'images/art/skull_book.png', alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/candygirl.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/goosex.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/jinx.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/pochita.png`, alt: 'Artistic Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skull_book.png`, alt: 'Artistic Achievement Image' },
         ]);
     }
     
     // if (clickX > guitar.x && clickX < guitar.x + guitar.width && clickY > guitar.y && clickY < guitar.y + guitar.height) {
     //     setModalContent([
     //         { type: 'text', text: 'Guitar Achievements' },
-    //         { type: 'image', src: 'images/characterBack.PNG', alt: 'Guitar Achievement Image' },
+    //         { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, alt: 'Guitar Achievement Image' },
     //         { type: 'text', text: 'Instagram music account: @.' },
     //     ]);
     // }
@@ -299,25 +285,25 @@ const GameCanvas = () => {
         setModalContent([
             { type: 'text', text: 'Photography Achievements' },
             { type: 'text', text: 'Instagram photography account: @a.pgy_t.' },
-            { type: 'image', src: 'images/photography/before-the-show.jpg', alt: 'Before the Show | 上台之前' },
-            { type: 'image', src: 'images/photography/bridge.JPG', alt: 'Bridge' },
-            { type: 'image', src: 'images/photography/bubble-man.JPG', alt: 'Bubble Man' },
-            { type: 'image', src: 'images/photography/conformity-bridge.JPG', alt: 'Conformity Bridge | 往来皆人不见己' },
-            { type: 'image', src: 'images/photography/delivery-man.JPG', alt: 'He Wilts so the Flowers Bloom | 送餐夕阳巷，我本送花郎' },
-            { type: 'image', src: 'images/photography/fence.JPG', alt: 'Fence' },
-            { type: 'image', src: 'images/photography/library.JPG', alt: 'Grind or Die' },
-            { type: 'image', src: 'images/photography/logo.JPG', alt: 'Logo' },
-            { type: 'image', src: 'images/photography/lonely.JPG', alt: 'Lonely' },
-            { type: 'image', src: 'images/photography/lungs.JPG', alt: 'Lungs' },
-            { type: 'image', src: 'images/photography/memory-shop.JPG', alt: 'The Memory Shop' },
-            { type: 'image', src: 'images/photography/mirror.JPG', alt: 'Reflection' },
-            { type: 'image', src: 'images/photography/mom.jpg', alt: 'Mom' },
-            { type: 'image', src: 'images/photography/slippery.JPG', alt: 'Slipping on Sunlight' },
-            { type: 'image', src: 'images/photography/snowing-temple.JPG', alt: 'Bubble Snow' },
-            { type: 'image', src: 'images/photography/thin-house.JPG', alt: 'Thin House' },
-            { type: 'image', src: 'images/photography/tingzi-bridge.jpg', alt: 'Another Bridge' },
-            { type: 'image', src: 'images/photography/tip.jpg', alt: 'Acute' },
-            { type: 'image', src: 'images/photography/water-fall.JPG', alt: 'Waterfall' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/before-the-show.jpg`, alt: 'Before the Show | 上台之前' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bridge.JPG`, alt: 'Bridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bubble-man.JPG`, alt: 'Bubble Man' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/conformity-bridge.JPG`, alt: 'Conformity Bridge | 往来皆人不见己' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/delivery-man.JPG`, alt: 'He Wilts so the Flowers Bloom | 送餐夕阳巷，我本送花郎' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/fence.JPG`, alt: 'Fence' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/library.JPG`, alt: 'Grind or Die' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/logo.JPG`, alt: 'Logo' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lonely.JPG`, alt: 'Lonely' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, alt: 'Lungs' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/memory-shop.JPG`, alt: 'The Memory Shop' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mirror.JPG`, alt: 'Reflection' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mom.jpg`, alt: 'Mom' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/slippery.JPG`, alt: 'Slipping on Sunlight' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/snowing-temple.JPG`, alt: 'Bubble Snow' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/thin-house.JPG`, alt: 'Thin House' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tingzi-bridge.jpg`, alt: 'Another Bridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tip.jpg`, alt: 'Acute' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/water-fall.JPG`, alt: 'Waterfall' },
 
         ]);
     }
