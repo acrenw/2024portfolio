@@ -168,9 +168,9 @@ const GameCanvas = () => {
             { type: 'text', text: 'ReadBetter' },
             { type: 'text', text: 'OStranslate' },
             { type: 'text', text: 'SignLingo' },
-            { type: 'youtube', id: 'AVIqqDKNNUA' },
+            { type: 'youtube', id: 'AVIqqDKNNUA' }, // signlingo
             { type: 'text', text: 'Feed the Child' },
-            { type: 'youtube', id: 'l8PHyBPLN_E' },
+            { type: 'youtube', id: 'l8PHyBPLN_E' }, //feed the child
             { type: 'text', text: 'Data Colonialism & Meta Research' },
             { type: 'pdf', src: 'documents/data_colonialism.pdf' },
             { type: 'text', text: 'Onshape Gallery' },
@@ -190,37 +190,37 @@ const GameCanvas = () => {
             { type: 'youtube', id: 'sajsWQKAiek' }, // accendio
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/accendio-group-photo.jpg`, caption: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/kabukicho-group-photo.jpg`, caption: 'Group photo of Accendio performance in Kabukicho, Tokyo.' },
-            { type: 'youtube', id: '_pBiNEmWHhY' }, // dice
-            { type: 'youtube', id: 'yK9jC1jydWI' }, // cupid
-            { type: 'youtube', id: 'pCdh_bfSy5M' }, // gashina
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/get-back-dance-photo.jpg`, caption: 'Dance practice in XuanSe dance studio.' },
-            { type: 'youtube', id: '9tioZwmZ1lk' }, // get back
-            { type: 'youtube', id: 'MXAAh60NQss' }, // hype boy
-            { type: 'youtube', id: 'uz8ux7EPHwI' }, // istj
-            { type: 'youtube', id: 'GYqEMHqhrLs' }, // ladida
-            { type: 'youtube', id: 'niTvaxbkku8' }, // hey mama
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-1.jpg`, caption: 'LHSS dance team group photo.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-2.jpg`, caption: 'LHSS dance team group photo.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/dbd-arm-flower.jpg`, caption: 'LHSS Double Blue Day performance snap shot.' },
-            { type: 'youtube', id: 'GAG_lFFnSRU' }, // panorama
-            { type: 'youtube', id: 'oKd_tsLKM3U' }, // pink venom clip
-            { type: 'youtube', id: 'Yy0YjQI83bk' }, // pink venom
-            { type: 'youtube', id: 'ZQEZF117JaY' }, // pretty girls
-            { type: 'youtube', id: 'brI-BJiU6VM' }, // quack quack
-            { type: 'youtube', id: 'SC-YZvHMA8g' }, // santa tell me
-            { type: 'youtube', id: 'n6tXUaSRiOE' }, // scoop
-            { type: 'youtube', id: '-2NCYs5t4to' }, // shape of you
-            { type: 'youtube', id: 'zdRHr963_LE' }, // sukidakara
             { type: 'youtube', id: 'DWvmQFWLwLY' }, // tambourine
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/violeta.jpg`, caption: 'LHSS end-of-year Violeta performance snap shot.' },
-            { type: 'youtube', id: 'y2zZfOGaK5M' }, // weapon
-            { type: 'youtube', id: 'pFdQui83pLk' }, // xiao cheng xia tian
+            { type: 'youtube', id: 'pCdh_bfSy5M' }, // gashina
+            // { type: 'youtube', id: 'zdRHr963_LE' }, // sukidakara
+            { type: 'youtube', id: 'uz8ux7EPHwI' }, // istj
+            { type: 'youtube', id: '_pBiNEmWHhY' }, // dice
+            { type: 'youtube', id: 'GYqEMHqhrLs' }, // ladida
+            // { type: 'youtube', id: '9tioZwmZ1lk' }, // get back
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/get-back-dance-photo.jpg`, caption: 'Dance practice in XuanSe dance studio.' },
+            { type: 'youtube', id: 'bO8DzvtGjto' }, // xuan se live performance
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-1.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-2.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
-            { type: 'youtube', id: 'bO8DzvtGjto' }, // xuan se live performance
+            { type: 'youtube', id: 'niTvaxbkku8' }, // hey mama
+            { type: 'youtube', id: 'GAG_lFFnSRU' }, // panorama
+            { type: 'youtube', id: 'oKd_tsLKM3U' }, // pink venom clip
+            { type: 'youtube', id: 'Yy0YjQI83bk' }, // pink venom
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-1.jpg`, caption: 'LHSS dance team group photo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/lhss-group-photo-2.jpg`, caption: 'LHSS dance team group photo.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/dbd-arm-flower.jpg`, caption: 'LHSS Double Blue Day performance snap shot.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/violeta.jpg`, caption: 'LHSS end-of-year Violeta performance snap shot.' },
+            { type: 'youtube', id: 'ZQEZF117JaY' }, // pretty girls
+            { type: 'youtube', id: 'pFdQui83pLk' }, // xiao cheng xia tian
+            { type: 'youtube', id: 'brI-BJiU6VM' }, // quack quack
             { type: 'youtube', id: 'dqluTAhGLBI' }, // young boss
-            { type: 'youtube', id: 'pOXwRIn1dnY' }, // zoom
+            // { type: 'youtube', id: 'MXAAh60NQss' }, // hype boy
+            { type: 'youtube', id: 'SC-YZvHMA8g' }, // santa tell me
+            { type: 'youtube', id: 'n6tXUaSRiOE' }, // scoop
+            { type: 'youtube', id: '-2NCYs5t4to' }, // shape of you
+            { type: 'youtube', id: 'yK9jC1jydWI' }, // cupid
+            // { type: 'youtube', id: 'pOXwRIn1dnY' }, // zoom
+            // { type: 'youtube', id: 'y2zZfOGaK5M' }, // weapon
         ]);
         setTextboxContent(""); 
     }
@@ -235,39 +235,39 @@ const GameCanvas = () => {
             { type: 'youtube', id: 'b3xqs8ZuWso' }, // phone case
             { type: 'youtube', id: 'EJdPlGHerAE' }, // food
             { type: 'youtube', id: 'zYYP5FY3px4' }, // cute girls
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bangs_girl.jpg`, caption: 'Vase Body' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/basketball_design.png`, caption: 'Basketball Shoes Poster Design' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/blind_girl.png`, caption: 'Blind' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bubble_tea.png`, caption: 'Bubble Tea Day' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/butterfly_girl.jpg`, caption: 'Butterfly Talk' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/carton_girl.png`, caption: 'Milk Carton Fairy' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/cheetah_girl.jgp.jpg`, caption: 'Wild' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chick.png`, caption: 'Chick' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chicken_design.png`, caption: 'Paid Poster Design Commission for News Company, gained >130k views' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chinese_bunny.png`, caption: 'Mid Autumn Festival' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/clouds.png`, caption: 'Clouds' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/egg_head.jpg`, caption: 'No Thoughts Egg Head' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/no_tears_girl.jpg`, caption: 'Water Shortage' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/hazards_poster.jpg`, caption: 'Hazards Poster Design' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub_logo.png`, caption: 'Key Club Division 3/4 Logo Design' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub.png`, caption: 'Key Club Media Design' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/lama.jpg`, caption: 'Toys Still Life - Acrylic on Cardboard' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/morgan_freeman.jpg`, caption: 'Morgan Freeman - Acrylic on Cardboard' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/nobody_cares.png`, caption: 'Shirt Design - Lithography' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/punk_girl.png`, caption: 'Punk' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/reading_girl.jpg`, caption: 'Sunday Afternoon' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/red_thread_guy.png`, caption: 'Satan' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/victorian_girls.jpg`, caption: 'Victorian Party - Acrylic on Canvas' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture1.jpg`, caption: 'Sculpture 1 - Graphite on Paper' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sculpture2.jpg`, caption: 'Sculpture 2 - Graphite on Paper' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/silenced_girl.jpg`, caption: 'Silenced' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skateboard.jpg`, caption: 'Skateboard Design' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sleeping_girl.png`, caption: 'Lavender Night' },
-            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset_village.png`, caption: 'Sunset Village' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/reading_girl.jpg`, caption: 'Sunday Afternoon' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset.png`, caption: 'Lone Traveller at Sunset' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/victorian_girls.jpg`, caption: 'Victorian Party - Acrylic on Canvas' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/waves.jpg`, caption: 'Waves' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/whale.jpg`, caption: 'Sky Whale - This is also an NFT' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/butterfly_girl.jpg`, caption: 'Butterfly Talk' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bangs_girl.jpg`, caption: 'Vase Body' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/cheetah_girl.jgp.jpg`, caption: 'Wild' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/blind_girl.png`, caption: 'Blind' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/bubble_tea.png`, caption: 'Bubble Tea Day' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/egg_head.jpg`, caption: 'No Thoughts Egg Head' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/no_tears_girl.jpg`, caption: 'Water Shortage' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/silenced_girl.jpg`, caption: 'Silenced' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chinese_bunny.png`, caption: 'Mid Autumn Festival' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/waves.jpg`, caption: 'Waves' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chick.png`, caption: 'Chick' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/clouds.png`, caption: 'Clouds' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/carton_girl.png`, caption: 'Milk Carton Fairy' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/punk_girl.png`, caption: 'Punk' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/red_thread_guy.png`, caption: 'Satan' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sleeping_girl.png`, caption: 'Lavender Night' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chicken_design.png`, caption: 'Paid Poster Design Commission for News Company, gained >130k views' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/basketball_design.png`, caption: 'Basketball Shoes Poster Design' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub_logo.png`, caption: 'Key Club Division 3/4 Logo Design' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub.png`, caption: 'Key Club Media Design' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/nobody_cares.png`, caption: 'Shirt Design - Lithography' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/skateboard.jpg`, caption: 'Skateboard Design' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/wufc.png`, caption: 'Frizbee Design for WUFC at the University of Waterloo' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/hazards_poster.jpg`, caption: 'Hazards Poster Design' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset_village.png`, caption: 'Sunset Village' },
             { type: 'text', text: '3D Gallery' },
             { type: 'youtube', id: 'ulzAFV6T5xw' }, // rolling ball
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/candygirl.png`, caption: 'Candy Girl blindbox design with Blender' },
@@ -303,25 +303,25 @@ const GameCanvas = () => {
         setModalContent([
             { type: 'text', text: 'Photography Achievements' },
             { type: 'text', text: 'Instagram photography account: @a.pgy_t.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/water-fall.JPG`, caption: 'Waterfall' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/before-the-show.jpg`, caption: 'Before the Show | 上台之前' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bridge.JPG`, caption: 'Bridge' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bubble-man.JPG`, caption: 'Bubble Man' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/conformity-bridge.JPG`, caption: 'Conformity Bridge | 往来皆人不见己' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bubble-man.JPG`, caption: 'Bubble Man' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/delivery-man.JPG`, caption: 'He Wilts so the Flowers Bloom | 送餐夕阳巷，我本送花郎' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/fence.JPG`, caption: 'Fence' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/library.JPG`, caption: 'Grind or Die' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/logo.JPG`, caption: 'Logo' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lonely.JPG`, caption: 'Lonely' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, caption: 'Lungs' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/memory-shop.JPG`, caption: 'The Memory Shop' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mirror.JPG`, caption: 'Reflection' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mom.jpg`, caption: 'Mom' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/slippery.JPG`, caption: 'Slipping on Sunlight' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/snowing-temple.JPG`, caption: 'Bubble Snow' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lonely.JPG`, caption: 'Lonely' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/thin-house.JPG`, caption: 'Thin House' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/fence.JPG`, caption: 'Fence' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/mirror.JPG`, caption: 'Reflection' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/library.JPG`, caption: 'Grind or Die' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/bridge.JPG`, caption: 'Bridge' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tingzi-bridge.jpg`, caption: 'Another Bridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/logo.JPG`, caption: 'Logo' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tip.jpg`, caption: 'Acute' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/water-fall.JPG`, caption: 'Waterfall' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, caption: 'Lungs' },
         ]);
         setTextboxContent(""); 
     }

@@ -15,7 +15,8 @@ const ModalComponent = ({ content, onClose }) => {
               }
               return null;
             })}
-            <div className="gallery-container">
+            {/* make this rearrange horizontally, not vertically */}
+            <div className="gallery-container"> 
               {content.map((section, index) => {
                 if (section.type === 'image') {
                   return (
