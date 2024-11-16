@@ -122,9 +122,10 @@ const GameCanvas = () => {
     // ex. pianoModalContent = [{},{},{}]
     if (clickX > piano.x && clickX < piano.x + piano.width && clickY > piano.y && clickY < piano.y + piano.height) {
         setModalContent([
-            { type: 'text', text: 'Piano Achievements' },
+            { type: 'title', text: 'Piano Things' },
             // { type: 'text', text: 'Instagram music account: @' },
             { type: 'text', text: 'Level 8 Piano First Class Honours The Royal Conservatory of Music Issued Jul 2021' },
+            { type: 'text', text: 'Covers yet to come...' },
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, caption: 'Piano Achievement Image' },
             // { type: 'text', text: 'Details about your piano achievements, recitals, and progress.' },
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/characterBack.PNG`, caption: 'Piano Achievement Image' },
@@ -135,46 +136,63 @@ const GameCanvas = () => {
     
     if (clickX > computer.x && clickX < computer.x + computer.width && clickY > computer.y && clickY < computer.y + computer.height) {
         setModalContent([
-            { type: 'text', text: 'Cera\'s computer' },
+            { type: 'title', text: 'Contact' },
             { 
               type: 'text', 
               text: (
                   <>
+                    <center>
                       Email: <a href="mailto:c252wang@uwaterloo.ca">c252wang@uwaterloo.ca</a> | 
                       Phone: <a href="tel:+15195773709">(519) 577-3709</a> |
                       ~ <a href="https://www.linkedin.com/in/cera-wang-171699240/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
                       ~ <a href="https://github.com/acrenw" target="_blank" rel="noopener noreferrer">Github</a>
+                    </center>
                   </>
               ) 
             },
-            { type: 'text', text: 'Projects Folder' },
-            { type: 'text', text: 'Internships Folder' },
-            { type: 'text', text: 'Rapyuta Robotics' },
-            { type: 'text', text: 'Loopx - Embedded Programmer + Graphic Designer' },
+            { type: 'title', text: 'Internships' }, // TODO: make this into folders later
+            { type: 'subtitle', text: 'Rapyuta Robotics' },
+
+            { type: 'subtitle', text: 'Loopx - Embedded Programmer + Graphic Designer' },
             { type: 'text', text: 'I worked in ROS (Robot Operating System) with Python for autonomous mining vehicles. I also contributed to the UI/UX design of the LoopX website and the AI platform AISear with Adobe PS, Figma, and Procreate. As the designer, I created marketing media like the GoosEx logo, posters, flyers, stickers, busines scards, shirts and social media banners.' },
-            { type: 'text', text: 'OpenPrinciples - Full stack Developer' },
+            
+            { type: 'subtitle', text: 'OpenPrinciples - Full stack Developer' },
             { type: 'text', text: 'I adjusted code-based backend and frontend development in Python for UltraBrain (an AI and human hybrid assistant) optimizing algorithmic functionality and ensuring enhanced productivity and user experience. I also designed and implemented a data engineering pipeline in Python to facilitate analytics.' },
-            { type: 'text', text: 'Projects' },
-            { type: 'text', text: 'ClockHacks - Organizer' },
+            
+            { type: 'title', text: 'Projects' },
+            { type: 'subtitle', text: 'ClockHacks - Organizer' },
             { type: 'text', text: 'I organized ClockHacks, the largest MLH-certified high school hackathon of the 2023 season, with participation of 360 attendees and securing prizes valued over $10,000. Made organizer project using React and Tailwind CSS.' },
-            { type: 'text', text: 'FoodiEco' },
+            
+            { type: 'subtitle', text: 'FoodiEco' },
             { type: 'text', text: 'People are polluting the environment for their convenience. Most people aren’t aware of what is inside their fridge, leading to food waste and compulsive buying which is detrimental to the environment. FoodiEco is the byproduct of eco-friendliness and convenience. ​The FoodiEco app, coded in Python, offers a fridge page that allows the user to have a full view of the items in their fridge, helping reduce food waste and impulse buying. There is also a recipe page that allows the user to save their own recipes to help with the organization of cooking. Moreover, there is a replacement page that informs the user of healthier and more eco-friendly replacements for certain ingredients.' },
-            { type: 'text', text: 'HealThyme' },
-            { type: 'text', text: 'Shoebill' },
-            { type: 'text', text: "Slouchn't" },
-            { type: 'text', text: 'Remindicine' },
+            
+            { type: 'subtitle', text: 'HealThyme' },
+           
+           
+            { type: 'subtitle', text: 'Shoebill' },
+           
+            { type: 'subtitle', text: "Slouchn't" },
+           
+            { type: 'subtitle', text: 'Remindicine' },
             { type: 'text', text: 'It\'s common to have diseases as one ages, and medication intake is an essential part of that. However, more than 80% of patients usually miss their prescription. Remindincine aims to serve as a reminder for medication intake, for those patients who need to take various medications several times in a day (for instance, patients with uremia are usually required to take more than six types of medications daily), or individuals with memory impairment.' },
-            { type: 'pdf', src: 'documents/data_colonialism.pdf' },
-            { type: 'text', text: 'ReadBetter' },
-            { type: 'text', text: 'OStranslate' },
-            { type: 'text', text: 'SignLingo' },
+           
+            { type: 'subtitle', text: 'ReadBetter' },
+            
+            { type: 'subtitle', text: 'OStranslate' },
+            
+            { type: 'subtitle', text: 'SignLingo' },
             { type: 'youtube', id: 'AVIqqDKNNUA' }, // signlingo
-            { type: 'text', text: 'Feed the Child' },
+            
+            { type: 'subtitle', text: 'Feed the Child' },
             { type: 'youtube', id: 'l8PHyBPLN_E' }, //feed the child
-            { type: 'text', text: 'Data Colonialism & Meta Research' },
+            
+            { type: 'subtitle', text: 'Data Colonialism & Meta Research' },
             { type: 'pdf', src: 'documents/data_colonialism.pdf' },
-            { type: 'text', text: 'Onshape Gallery' },
-            { type: 'text', text: 'Blind Box Project' },
+            
+            { type: 'title', text: 'Onshape Gallery' },
+            
+            { type: 'subtitle', text: 'Blind Box Project' },
+            
             { type: 'pdf', src: 'documents/2025_master_resume__simp_.pdf' },
         ]);
         setTextboxContent(""); 
@@ -183,7 +201,7 @@ const GameCanvas = () => {
     // TODO: add interactive captions & reorganize
     if (clickX > danceFloor.x && clickX < danceFloor.x + danceFloor.width && clickY > danceFloor.y && clickY < danceFloor.y + danceFloor.height) {
         setModalContent([
-            { type: 'text', text: 'Dance Achievements' },
+            { type: 'title', text: 'Dance Things' },
             { type: 'text', text: 'Instagram dance account: @helo_moshi' },
             { type: 'youtube', id: 'Oxr0JxiVCso' }, // baddie
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/baddie-group-photo.jpg`, caption: 'Baddie performance in Lazardis Hall, Laurier University, Waterloo.' },
@@ -227,8 +245,9 @@ const GameCanvas = () => {
     
     if (clickX > easle.x && clickX < easle.x + easle.width && clickY > easle.y && clickY < easle.y + easle.height) {
         setModalContent([
+            { type: 'title', text: 'Art Things' },
             { type: 'text', text: 'Instagram art account: @acrenw' },
-            { type: 'text', text: 'Illustration Gallery' },
+            { type: 'subtitle', text: 'Illustration Gallery' },
             { type: 'youtube', id: 'rzcSCLN9PmM' }, // sunsest
             { type: 'youtube', id: '_uWFIWkj6hA' }, // single layer
             { type: 'youtube', id: '0gJHkqd7xwA' }, // sticker
@@ -259,6 +278,7 @@ const GameCanvas = () => {
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/punk_girl.png`, caption: 'Punk' },
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/red_thread_guy.png`, caption: 'Satan' },
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sleeping_girl.png`, caption: 'Lavender Night' },
+            { type: 'subtitle', text: 'Designs' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/chicken_design.png`, caption: 'Paid Poster Design Commission for News Company, gained >130k views' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/basketball_design.png`, caption: 'Basketball Shoes Poster Design' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/keyclub_logo.png`, caption: 'Key Club Division 3/4 Logo Design' },
@@ -268,7 +288,7 @@ const GameCanvas = () => {
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/wufc.png`, caption: 'Frizbee Design for WUFC at the University of Waterloo' },
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/hazards_poster.jpg`, caption: 'Hazards Poster Design' },
             // { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/sunset_village.png`, caption: 'Sunset Village' },
-            { type: 'text', text: '3D Gallery' },
+            { type: 'subtitle', text: '3D Gallery' },
             { type: 'youtube', id: 'ulzAFV6T5xw' }, // rolling ball
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/art/candygirl.png`, caption: 'Candy Girl blindbox design with Blender' },
             // TODO: add my islands and donuts and whatnot
@@ -291,9 +311,9 @@ const GameCanvas = () => {
     
     if (clickX > bookshelf.x && clickX < bookshelf.x + bookshelf.width && clickY > bookshelf.y && clickY < bookshelf.y + bookshelf.height) {
         setModalContent([
-            { type: 'text', text: 'Literature Achievements' },
-            { type: 'text', text: 'Caterpillar finding friends.' },
-            { type: 'text', text: 'The  Polar Express short story.' },
+            { type: 'title', text: 'Literature Things' },
+            { type: 'text', text: 'Caterpillar finding friends published book.' },
+            { type: 'text', text: 'Published Polar Express short story.' },
             { type: 'text', text: 'My poetry & anthology.' },
         ]);
         setTextboxContent(""); 
@@ -301,7 +321,7 @@ const GameCanvas = () => {
     
     if (clickX > camera.x && clickX < camera.x + camera.width && clickY > camera.y && clickY < camera.y + camera.height) {
         setModalContent([
-            { type: 'text', text: 'Photography Achievements' },
+            { type: 'title', text: 'Photography Things' },
             { type: 'text', text: 'Instagram photography account: @a.pgy_t.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/water-fall.JPG`, caption: 'Waterfall' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/before-the-show.jpg`, caption: 'Before the Show | 上台之前' },
@@ -328,12 +348,12 @@ const GameCanvas = () => {
     
     if (clickX > metals.x && clickX < metals.x + metals.width && clickY > metals.y && clickY < metals.y + metals.height) {
         setModalContent([
-            { type: 'text', text: 'Certifications and Awards'},
-            { type: 'text', text: 'Level 8 Piano First Class Honours The Royal Conservatory of Music Issued Jul 2021' },
-            { type: 'text', text: 'Certificate of Distinction Issued by University of Waterloo CEMC · Apr 2021 CCC Top 25%.' },
-            { type: 'text', text: 'Chinese Panda Cup Competition Issued by The Consulate General of the People’s Republic of China in Toronto · Aug 2017 & 2018 Second Place ' },
-            { type: 'text', text: 'Certificate of Achievement Certificate of Achievement Issued by KW Chinese School · Jun 2016 In Recognition of Academic Excellence' },
-            { type: 'text', text: 'Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement in 2018/2019 National Student Short-Story Contest ' },
+            { type: 'title', text: 'Certifications and Awards'},
+            { type: 'list', text: 'Level 8 Piano First Class Honours The Royal Conservatory of Music Issued Jul 2021' },
+            { type: 'list', text: 'Certificate of Distinction Issued by University of Waterloo CEMC · Apr 2021 CCC Top 25%.' },
+            { type: 'list', text: 'Chinese Panda Cup Competition Issued by The Consulate General of the People’s Republic of China in Toronto · Aug 2017 & 2018 Second Place ' },
+            { type: 'list', text: 'Certificate of Achievement Certificate of Achievement Issued by KW Chinese School · Jun 2016 In Recognition of Academic Excellence' },
+            { type: 'list', text: 'Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement in 2018/2019 National Student Short-Story Contest ' },
           ]);
           setTextboxContent(""); 
     }

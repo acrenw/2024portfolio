@@ -13,6 +13,15 @@ const ModalComponent = ({ content, onClose }) => {
               if (section.type === 'text') {
                 return <p key={index} className="text-content">{section.text}</p>;
               }
+              if (section.type === 'list') {
+                return <p key={index} className="text-content"><ul><li>{section.text}</li></ul></p>;
+              }
+              if (section.type === 'title') {
+                return <p key={index} className="text-content"><center><b><h2>{section.text}</h2></b></center></p>;
+              }
+              if (section.type === 'subtitle') {
+                return <p key={index} className="text-content"><b><h4>{section.text}</h4></b></p>;
+              }
               return null;
             })}
             {/* make this rearrange horizontally, not vertically */}
