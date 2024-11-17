@@ -346,7 +346,7 @@ const GameCanvas = () => {
             // { type: 'youtube', id: '9tioZwmZ1lk' }, // get back
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/get-back-dance-photo.jpg`, caption: 'Dance practice in XuanSe dance studio.' },
             { type: 'youtube', id: 'bO8DzvtGjto' }, // xuan se live performance
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-group-photo.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-1.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/dance/xuan-se-dance-photo-2.jpg`, caption: 'Dance practice snap shot in XuanSe dance studio.' },
             { type: 'youtube', id: 'niTvaxbkku8' }, // hey mama
