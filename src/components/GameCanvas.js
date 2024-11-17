@@ -158,20 +158,38 @@ const GameCanvas = () => {
             { type: 'text', text: 'The product I was working on was an Automated Storage and Retrieval System (ASRS) robot, and it travels in our own warehouse structure with tiles as path units.' },
             { type: 'text', text: 'By the end of my internship, I worked to develop dynamic obstacle collision avoidance for ASRS robots in ROS2 using finite state machines, handling how robots publish their immediate path as “obstacles.” I also implemented a 3D R-tree for spatial indexing of robot paths, reducing query time from O(n) to O(log n). The R-tree also helped to enhance robot localization accuracy and safety by being able to support varied tile sizes, like the fire-shutter tiles, for abiding by safety protocols.' },
             { type: 'text', text: 'The subteam I was on mainly focused on theoretical math, where I designed a master controller that integrates a 6-component pipeline which worked to optimizes the ASRS production operation speed by mathematically calculating structural architecture. This pipeline is currently utilized by >3 clients and many internal teams. Our optimization strategy is based on genetic evolutionary algorithms, which I codeveloped with my team and implemented additional evolution subjects with varied chromosome lengths, addressing non-convex, multi-modal black-box optimization challenges to improve the ASRS layout. I developed one of the first components in the pipeline, an interactive Python module for real-time ASRS layout arrangement, utilizing multi-source BFS, proximity-based sorting, and directional heuristics; capable of layout rearrangement based on the time variable. We also conducted simulations and generated plots to assess convergence and parameter correlations of the evolutionary algorithm for discovering potential enhancements for our current algorithm.' },
-            
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/rr/cheer.JPG`, caption: 'Cheering at work' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/rr/group_photo.PNG`, caption: 'Onboarding group photo' },
+
             { type: 'subtitle', text: <a href="https://www.loopx.ai/" target="_blank" rel="noopener noreferrer">Loopx</a> },
             { type: 'info', text: 'Embedded Programmer + Graphic Designer' },
             { type: 'text', text: 'In high school, I was lucky enough to have an amazing opportunity to join LoopX as an intern. LoopX was my first robotics related internship, and where I discovered the excitement of engineering.' },
             { type: 'text', text: 'At first, we were developing GoosEx - an autonomous delivery robot - which I used Python to program interactive LED screens in for displaying text alerts and emoticons to pedestrians if the robot was ever blocked or in any interactable status. Later, when LoopX moved to developing the autonomous mining vehicle, I integrated lidar-activated LED strips in C++ for it in ROS using Raspberry Pi and Jetson Nano.' },
             { type: 'text', text: 'I also handled the UI/UX design of the LoopX website and the AI platform AISear using Adobe PS, Figma, and Procreate. I was also delegated design and marketing tasks as they thought I was the only one with an artistic vision in the team. So I created marketing media like the GoosEx logo, posters, flyers, stickers, LoopX business cards, company shirts, social media banners, and so on.' },
-            
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/accelerator_center.png`, caption: 'Accelerator center' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/basement.png`, caption: 'Working in the basement' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/wires.png`, caption: 'Building the LED screen' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/led_screen.jpg`, caption: 'Programming the LED screen' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/mechanic.png`, caption: 'Building GoosEx' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/obstacle.gif`, caption: 'Obstacle detection testing in UW' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/landing_page.gif`, caption: 'Landing page design' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/aisear.gif`, caption: 'Aisear logo design' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/goosex_design.png`, caption: 'GoosEx logo design' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/business_card.png`, caption: 'Business card design' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/pin.png`, caption: 'Pin design' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/shirt_design.png`, caption: 'Shirt design 1' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/shirt_design2.png`, caption: 'Shirt design 2' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/sticker.png`, caption: 'Sticker design page' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/loopx/web_design.png`, caption: 'Landing page' },
+
             { type: 'subtitle', text: <a href="https://openprinciples.notion.site/About-OpenPrinciples-2cff064670e94c87987d564da126d261" target="_blank" rel="noopener noreferrer">OpenPrinciples</a> },
             { type: 'info', text: 'Full stack Developer' },
             { type: 'text', text: 'I had a great time working for OpenPrinciples, as it promotes altruism and self improvement, which aligns with my personal beliefs and ideals.' },
             { type: 'text', text: 'One of our main products was UltraBrain, an AI-human assistant to align Google Calendar events with personal principles. As the full-stack developer, I integrated the Notion API with Google Calendar in Python to enhance Ultrabrain’s database and algorithmic accuracy, along with improving the UI of UltraBrain.' },
             { type: 'text', text: 'I also got to gain experience with data science by developing and deploying a Python-based data pipeline to streamline analytics and enhance data accessibility.' },
-            
-            // TODO: rearrange order of projects
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/openprinciples/discord_call.png`, caption: 'Virtual group photo during COVID' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/openprinciples/github.png`, caption: 'Landing page' },
+
             { type: 'title', text: 'Projects' },
             { type: 'subtitle', text: <a href="https://clockhacks.dev/" target="_blank" rel="noopener noreferrer">ClockHacks</a> },
             { type: 'info', text: 'Organizer' },
@@ -179,40 +197,57 @@ const GameCanvas = () => {
             { type: 'text', text: 'I also held events throughout ClockHacks, including leading the  UI/UX workshop, the opening and closing ceremonies, inviting the CEO of Centered as a guest speaker, a midnight Among Us mini game, and many more informative workshops and fun gathering events.' },
             { type: 'text', text: 'One of the main differentiating factor of our hackathon was the 3-hour organizer hacking event, where the organizers had to create a hackathon project in under 3 hours. My team and I built a base-10 clock in this event using React, Tailwind, and the built-in JavaScript time module for front-end while live streaming it on Twitch.' },
             { type: 'text', text: 'I also created all visual media for our hackathon, including the logo, swag (stickers and shirts), banners, posters, and promotional materials. The swag I created were later shipped to the winners of ClockHacks.' },
-            
-            { type: 'subtitle', text: 'FoodiEco' },
-            { type: 'text', text: 'Winner of Best Software Project that gives users eco-friendly replacements of recipes. We used Python for backend algorithmic calculations, and Tkinter for interactive UI.' },
-            { type: 'text', text: 'This project was inspired by how people are increasingly polluting the environment for their convenience. Most people think pollution is the fault of big corporate companies and there\'s nothing they can do as an individual to make a change. However, there is one thing we have not really realized, and that is what is inside of our fridge. Ignorance of food leads to food waste and compulsive buying which is detrimental to the environment. Therefore, we created FoodiEco, the byproduct of eco-friendliness and convenience. It offers a fridge page that allows the user to have a full view of the items in their fridge, helping reduce food waste and impulse buying. There is also a recipe page that allows the user to save their own recipes to help with the organization of cooking. More, there is a replacement page that informs the user of healthier and more eco-friendly replacements for certain ingredients.' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/fridge.png`, caption: 'Fridge' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/landing.png`, caption: 'Landing page' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/list.png`, caption: 'Ingredients list' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/recipe.png`, caption: 'Recipe book' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/replacement.png`, caption: 'Ingredient replacement suggestions' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/search.png`, caption: 'Search page' },
-            
-            { type: 'subtitle', text: 'HealThyme' },
-            { type: 'text', text: 'HealThyme uses the Azure Maps geospatial platform to integrate a geolocation feature for nearby walk-in clinics, granting users real-time accessibility to healthcare services. It is built with React.js for an interactive and responsive frontend, and Azure managing location and personal data.' },
-            { type: 'text', text: 'It takes the location of the user, and generates a map indicating each of the hospitals closest to the user as well as how many people are in line in front of them. The user interface is especially designed for ease of comparison between the different hospitals in terms of their distance and wait time. Once the user has chosen a hospital or clinic they think is the best fit for their situation, the user is able to book a time at that said hospital, saving them time, and maybe even their life. HealThyme not only appeals to people who are seeking medical help, but it also acts as a platform for hospitals. Each hospital is able to sign up and view how many people have booked appointments , and manage the patients using our website. Any changes that the hospital makes, the user/patient will also be able to see it as well.' },
-           
+            { type: 'youtube', id: 'Irh7pC81TMM' }, // clockhacks
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/discord_call.jpg`, caption: 'Virtual group photo during COVID' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/working.jpg`, caption: 'Working during the hackathon' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/better_clock1.png`, caption: 'Organizer project: BetterClock' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/better_clock2.png`, caption: 'Organizer project: BetterClock' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/logo.png`, caption: 'Logo design' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/ig_post.png`, caption: 'Media design' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/shirt.png`, caption: 'Shirt design 1' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/shirt2.png`, caption: 'Shirt design 2' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/shirt3.png`, caption: 'Shirt design 3' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/shirt4.png`, caption: 'Shirt design 4' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/sticker1.png`, caption: 'Sticker design 1' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/sticker2.png`, caption: 'Sticker design 2' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/experience/clockhacks/sticker3.png`, caption: 'Logo design' },
+
             { type: 'subtitle', text: 'Shoebill' },
             { type: 'text', text: 'Shoebill is a web application that tracks, detects, documents and provides solutions to gaming addiction. It\'s analytics are able to track your mental stability, mood and emotions while you game. It can help you discover trends in your temperament and learn what kind of gamer you are. Using Shoebill, we can learn what tilts you the most — and optimize and grow as a competitive gamer.' },
             { type: 'text', text: 'Shoebill is built with React.js as the main framework, supported by a Flask Python backend. We integrated Hume’s API to detect emotions related to game addiction and rage behaviour. We also tried integrating the Zepp watch to get user\'s health data for analysis.' },
-           
-            { type: 'subtitle', text: "Slouchn't" },
-            { type: 'text', text: 'Slouchn’t is a posture correction software that utilizes computer vision. It first calibrates with the user to determine their correct and incorrect posture. With this collected data, the program will determine the range the user would have to meet in order to maintain a good posture. If the user does not have the right posture - straight back and neck - for a certain amount of time, the program will urge the user to adjust their posture through audio and video effects. The program also includes tips the user can keep in mind for maintaining the perfect posture.' },
-            { type: 'text', text: 'We used the opencv-python package, along with mediapipe to build our computer vision program. It prompts the webcam of the computer, which detects the motion of the person using specific body landmarks, including the shoulders, nose and eyes. The distances between these landmarks are then used to determine whether or not the person has incorrect posture. If the distance drops under a certain calculated threshold, the user is told to fix their posture before continuing their work. We also tested this on multiple people to raise the accuracy of our software' },
-           
+            { type: 'youtube', id: 'qP-S0vukCM4' }, // shoebill
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/shoebill/landing_page.png`, caption: 'Profile (landing page): shows most recent screen capture from raging user\'s webcam and a customizable gaming timer' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/shoebill/stats.png`, caption: 'Stats: displays user\'s health data and analysis based on Zepp watch data' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/shoebill/support.png`, caption: 'Support: animated oscillating circle to engage users in a meditational breathing exercise after raging in game' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/shoebill/bluetooth.png`, caption: 'Bluetooth connection between Zepp watch and Shoebill' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/shoebill/bluetooth2.png`, caption: 'Bluetooth connection between Zepp watch and Shoebill' },
+
+            { type: 'subtitle', text: 'HealThyme' },
+            { type: 'text', text: 'HealThyme uses the Azure Maps geospatial platform to integrate a geolocation feature for nearby walk-in clinics, granting users real-time accessibility to healthcare services. It is built with React.js for an interactive and responsive frontend, and Azure managing location and personal data.' },
+            { type: 'text', text: 'It takes the location of the user, and generates a map indicating each of the hospitals closest to the user as well as how many people are in line in front of them. The user interface is especially designed for ease of comparison between the different hospitals in terms of their distance and wait time. Once the user has chosen a hospital or clinic they think is the best fit for their situation, the user is able to book a time at that said hospital, saving them time, and maybe even their life. HealThyme not only appeals to people who are seeking medical help, but it also acts as a platform for hospitals. Each hospital is able to sign up and view how many people have booked appointments , and manage the patients using our website. Any changes that the hospital makes, the user/patient will also be able to see it as well.' },
+            { type: 'youtube', id: 'iKNFji-NY80' }, // healthyme
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/landing_page.png`, caption: 'Landing: patients choose their location' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/waitlist.png`, caption: 'Waitlist: available for hospitals to update their waitlist information' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/booking_hospitals.png`, caption: 'Booking: lists nearby hospitals available for booking based on current user location' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/booking.jpeg`, caption: 'Booking: shows hospital information' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/booking_info.jpeg`, caption: 'Booking: patients enter booking info' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/sign_in.jpeg`, caption: 'Sign-in: both patients and hospitals can sign in' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/sign_up.jpeg`, caption: 'Sign-up: both patients and hospitals can sign up' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/healthyme/profile.jpeg`, caption: 'Profile: Hospitals enter their information in profile' },
+
             { type: 'subtitle', text: 'Remindicine' },
             { type: 'text', text: 'It\'s common to have diseases as one ages, and medication intake is an essential part of that. However, more than 80% of patients usually miss their prescription. Remindincine aims to serve as a reminder for medication intake, for those patients who need to take various medications several times in a day (for instance, patients with uremia are usually required to take more than six types of medications daily), or individuals with memory impairment.' },
+            { type: 'pdf', src: `${process.env.PUBLIC_URL}/images/projects/remindicine/project_proposal.pdf` },
+            { type: 'pdf', src: `${process.env.PUBLIC_URL}/images/projects/remindicine/design_doc.pdf` },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/remindicine/mechanical-drawing-v1_orig.png`, caption: 'Pill box mechanical drawing' },
 
             { type: 'subtitle', text: 'ReadBetter' },
             { type: 'text', text: 'ReadBetter is a web application that utilizes bionic reading to help people increase their reading efficiency. Whether if it’s because you have low attention span or if you’re cramming in that last lecture before a quiz. Bionic reading is a technology of guiding people’s eyes across texts to assist in reading by providing artificial fixation points. By bolding initial letters of words with a specific rule that creates the highest efficiency in reading, it allows the reader to easily follow the text. ReadBetter accepts pdf files, image files (.jpeg, .jpg, and .png), and audio files and displays them in a bionic reading form for the users.' },
             { type: 'text', text: 'We developed a website using HTML, CSS and JS; using Flask and Python to code the functionality. Our program is able to handle various input types: pdf, image files, audio and txt. The parsing for these -files was coded using Python libraries: EasyOCR that handles image-to-text conversion and PyPDF2 for pdf-to-text. For the audio, we incorporated the use of AssemblyAI speech-to-text API, which converts audio files to text.' },
-            
-            { type: 'subtitle', text: 'OStranslate' },
-            { type: 'text', text: 'OStranslate is a web application that provides quick and easy summarization and translation by allowing the user to submit numerous types of file formats including text, url, video, and audio. After uploading, OStranslate provides a brief summary of the information covered in the uploaded file, then the user can choose from 133 different languages to translate between.' },
-            { type: 'text', text: 'OStranslate is built using Python, HTML, and CSS with the Symbl.ai and Google Translate APIs.' },
+            { type: 'youtube', id: 'BRFJ2iNiig0' }, // readbetter
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/readbetter/landing.png`, caption: 'Landing page' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/readbetter/choose_file.png`, caption: 'File selection' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/readbetter/complete_conversion.png`, caption: 'Conversion completed.' },
             
             { type: 'subtitle', text: 'SignLingo' },
             { type: 'text', text: 'SignLingo is a sign language translator software built using computer vision and the Blobscanner library in Processing for real-time translation between text and ASL. It incorporates error feedback mechanisms, providing users with real-time warnings for incorrect signs and an ASL cheat sheet for enhanced learning proficiency.' },
@@ -220,15 +255,45 @@ const GameCanvas = () => {
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/signlingo/detailed_instructions.png`, caption: 'Detailed instructions page' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/signlingo/title.png`, caption: 'Title page' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/signlingo/user_manual.png`, caption: 'User manual' },
-
+            
             { type: 'subtitle', text: 'Feed the Child' },
             { type: 'text', text: 'Feed the Child is a 2D platformer game built using Python, Tkinter, and Pygame. It incorporates a sound and timer system, and the graphics drawn by me using Procreate and Adobe PS.' },
             { type: 'youtube', id: 'l8PHyBPLN_E' }, //feed the child
             
+            { type: 'subtitle', text: "Slouchn't" },
+            { type: 'text', text: 'Slouchn’t is a posture correction software that utilizes computer vision. It first calibrates with the user to determine their correct and incorrect posture. With this collected data, the program will determine the range the user would have to meet in order to maintain a good posture. If the user does not have the right posture - straight back and neck - for a certain amount of time, the program will urge the user to adjust their posture through audio and video effects. The program also includes tips the user can keep in mind for maintaining the perfect posture.' },
+            { type: 'text', text: 'We used the opencv-python package, along with mediapipe to build our computer vision program. It prompts the webcam of the computer, which detects the motion of the person using specific body landmarks, including the shoulders, nose and eyes. The distances between these landmarks are then used to determine whether or not the person has incorrect posture. If the distance drops under a certain calculated threshold, the user is told to fix their posture before continuing their work. We also tested this on multiple people to raise the accuracy of our software' },
+            { type: 'youtube', id: 'v25uHHj_7GY' }, // slouchnt
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/tip.png`, caption: 'Intro screen: tip of the day' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/sit_straight.jpg`, caption: 'Calibration process: data collection' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/sitting_straight.png`, caption: 'Calibration process: user sitting straight' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/slouch.png`, caption: 'Calibration process: data collection' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/slouching.png`, caption: 'Calibration process: user slouching' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/calibration_complete.png`, caption: 'Calibration complete' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/slouchnt/warning.png`, caption: 'Warning window accompanied by sound to warn user to sit straight' },
+
+            { type: 'subtitle', text: 'FoodiEco' },
+            { type: 'text', text: 'Winner of Best Software Project that gives users eco-friendly replacements of recipes. We used Python for backend algorithmic calculations, and Tkinter for interactive UI.' },
+            { type: 'text', text: 'This project was inspired by how people are increasingly polluting the environment for their convenience. Most people think pollution is the fault of big corporate companies and there\'s nothing they can do as an individual to make a change. However, there is one thing we have not really realized, and that is what is inside of our fridge. Ignorance of food leads to food waste and compulsive buying which is detrimental to the environment. Therefore, we created FoodiEco, the byproduct of eco-friendliness and convenience. It offers a fridge page that allows the user to have a full view of the items in their fridge, helping reduce food waste and impulse buying. There is also a recipe page that allows the user to save their own recipes to help with the organization of cooking. More, there is a replacement page that informs the user of healthier and more eco-friendly replacements for certain ingredients.' },
+            { type: 'youtube', id: 'd77sW5xHxH4' }, // foodieco
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/landing.png`, caption: 'Landing page' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/fridge.png`, caption: 'Opened ridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/recipe.png`, caption: 'Recipe book' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/list.png`, caption: 'Recipe: create your own recipe' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/search.png`, caption: 'Replacement dictionary' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/replacement.png`, caption: 'Replacement dictionary: create your own replacements' },
+            
+            { type: 'subtitle', text: 'OStranslate' },
+            { type: 'text', text: 'OStranslate is a web application that provides quick and easy summarization and translation by allowing the user to submit numerous types of file formats including text, url, video, and audio. After uploading, OStranslate provides a brief summary of the information covered in the uploaded file, then the user can choose from 133 different languages to translate between.' },
+            { type: 'text', text: 'OStranslate is built using Python, HTML, and CSS with the Symbl.ai and Google Translate APIs.' },
+            { type: 'youtube', id: 'yH0WUr2rpaQ' }, // ostranslate
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/ostranslate/home.png`, caption: 'Landing page' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/ostranslate/data.png`, caption: 'Summarization and translation appear here' },
+
             { type: 'subtitle', text: 'Data Colonialism & Meta Research' },
             { type: 'text', text: 'This research paper examines the issue of data colonialism as it pertains to Meta, with a specific focus on its environmental implications. Meta’s history of data exploitation, exemplified by controversies like the Cambridge Analytica scandal and WhatsApp data sharing, underscores the pervasive societal impact of unethical data practices. Violations of user privacy not only threaten a fundamental human right but also amplify biases against marginalized groups and contribute to environmental harm through unsustainable technological development.' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/datacolonialism/infographic.png`, caption: 'Data Colonialism in Meta Infographic' },
-            { type: 'pdf', src: `${process.env.PUBLIC_URL}/documents/data_colonialism.pdf` },
+            { type: 'pdf', src: `${process.env.PUBLIC_URL}/images/projects/datacolonialism/data_colonialism.pdf` },
             
             { type: 'title', text: 'Onshape Gallery' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/a1.png`, caption: 'Piano Achievement Image' },
