@@ -143,7 +143,8 @@ const GameCanvas = () => {
                   <>
                     <center>
                       Email: <a href="mailto:c252wang@uwaterloo.ca">c252wang@uwaterloo.ca</a> | 
-                      Phone: <a href="tel:+15195773709">(519) 577-3709</a> |
+                      Phone (CA): <a href="tel:+15195773709">+1 519-577-3709</a> |
+                      Phone (JP): <a href="tel:+15195773709">+86 080-5661-4359</a> |
                       ~ <a href="https://www.linkedin.com/in/cera-wang-171699240/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
                       ~ <a href="https://github.com/acrenw" target="_blank" rel="noopener noreferrer">Github</a>
                     </center>
@@ -151,49 +152,112 @@ const GameCanvas = () => {
               ) 
             },
             { type: 'title', text: 'Internships' }, // TODO: make this into folders later
-            { type: 'subtitle', text: 'Rapyuta Robotics' },
-
-            { type: 'subtitle', text: 'Loopx - Embedded Programmer + Graphic Designer' },
-            { type: 'text', text: 'I worked in ROS (Robot Operating System) with Python for autonomous mining vehicles. I also contributed to the UI/UX design of the LoopX website and the AI platform AISear with Adobe PS, Figma, and Procreate. As the designer, I created marketing media like the GoosEx logo, posters, flyers, stickers, busines scards, shirts and social media banners.' },
+            { type: 'subtitle', text: <a href="https://www.rapyuta-robotics.com/" target="_blank" rel="noopener noreferrer">Rapyuta Robotics</a> },
+            { type: 'info', text: 'Robotics Software Engineer' },
+            { type: 'text', text: 'I worked as a Robotics Software Engineer on the Robot Control Systems team in Rapyuta Robotics. During my time in Japan, I met countless amazing people that have helped me and whom I became great friends with.' },
+            { type: 'text', text: 'The product I was working on was an Automated Storage and Retrieval System (ASRS) robot, and it travels in our own warehouse structure with tiles as path units.' },
+            { type: 'text', text: 'By the end of my internship, I worked to develop dynamic obstacle collision avoidance for ASRS robots in ROS2 using finite state machines, handling how robots publish their immediate path as “obstacles.” I also implemented a 3D R-tree for spatial indexing of robot paths, reducing query time from O(n) to O(log n). The R-tree also helped to enhance robot localization accuracy and safety by being able to support varied tile sizes, like the fire-shutter tiles, for abiding by safety protocols.' },
+            { type: 'text', text: 'The subteam I was on mainly focused on theoretical math, where I designed a master controller that integrates a 6-component pipeline which worked to optimizes the ASRS production operation speed by mathematically calculating structural architecture. This pipeline is currently utilized by >3 clients and many internal teams. Our optimization strategy is based on genetic evolutionary algorithms, which I codeveloped with my team and implemented additional evolution subjects with varied chromosome lengths, addressing non-convex, multi-modal black-box optimization challenges to improve the ASRS layout. I developed one of the first components in the pipeline, an interactive Python module for real-time ASRS layout arrangement, utilizing multi-source BFS, proximity-based sorting, and directional heuristics; capable of layout rearrangement based on the time variable. We also conducted simulations and generated plots to assess convergence and parameter correlations of the evolutionary algorithm for discovering potential enhancements for our current algorithm.' },
             
-            { type: 'subtitle', text: 'OpenPrinciples - Full stack Developer' },
-            { type: 'text', text: 'I adjusted code-based backend and frontend development in Python for UltraBrain (an AI and human hybrid assistant) optimizing algorithmic functionality and ensuring enhanced productivity and user experience. I also designed and implemented a data engineering pipeline in Python to facilitate analytics.' },
+            { type: 'subtitle', text: <a href="https://www.loopx.ai/" target="_blank" rel="noopener noreferrer">Loopx</a> },
+            { type: 'info', text: 'Embedded Programmer + Graphic Designer' },
+            { type: 'text', text: 'In high school, I was lucky enough to have an amazing opportunity to join LoopX as an intern. LoopX was my first robotics related internship, and where I discovered the excitement of engineering.' },
+            { type: 'text', text: 'At first, we were developing GoosEx - an autonomous delivery robot - which I used Python to program interactive LED screens in for displaying text alerts and emoticons to pedestrians if the robot was ever blocked or in any interactable status. Later, when LoopX moved to developing the autonomous mining vehicle, I integrated lidar-activated LED strips in C++ for it in ROS using Raspberry Pi and Jetson Nano.' },
+            { type: 'text', text: 'I also handled the UI/UX design of the LoopX website and the AI platform AISear using Adobe PS, Figma, and Procreate. I was also delegated design and marketing tasks as they thought I was the only one with an artistic vision in the team. So I created marketing media like the GoosEx logo, posters, flyers, stickers, LoopX business cards, company shirts, social media banners, and so on.' },
             
+            { type: 'subtitle', text: <a href="https://openprinciples.notion.site/About-OpenPrinciples-2cff064670e94c87987d564da126d261" target="_blank" rel="noopener noreferrer">OpenPrinciples</a> },
+            { type: 'info', text: 'Full stack Developer' },
+            { type: 'text', text: 'I had a great time working for OpenPrinciples, as it promotes altruism and self improvement, which aligns with my personal beliefs and ideals.' },
+            { type: 'text', text: 'One of our main products was UltraBrain, an AI-human assistant to align Google Calendar events with personal principles. As the full-stack developer, I integrated the Notion API with Google Calendar in Python to enhance Ultrabrain’s database and algorithmic accuracy, along with improving the UI of UltraBrain.' },
+            { type: 'text', text: 'I also got to gain experience with data science by developing and deploying a Python-based data pipeline to streamline analytics and enhance data accessibility.' },
+            
+            // TODO: rearrange order of projects
             { type: 'title', text: 'Projects' },
-            { type: 'subtitle', text: 'ClockHacks - Organizer' },
-            { type: 'text', text: 'I organized ClockHacks, the largest MLH-certified high school hackathon of the 2023 season, with participation of 360 attendees and securing prizes valued over $10,000. Made organizer project using React and Tailwind CSS.' },
+            { type: 'subtitle', text: <a href="https://clockhacks.dev/" target="_blank" rel="noopener noreferrer">ClockHacks</a> },
+            { type: 'info', text: 'Organizer' },
+            { type: 'text', text: 'I organized ClockHacks, the largest MLH-certified high school hackathon of the 2023 season, with around 360 attendees. I created the sponsorship package which helped secured over $10,000 in sponsorship prizes.' },
+            { type: 'text', text: 'I also held events throughout ClockHacks, including leading the  UI/UX workshop, the opening and closing ceremonies, inviting the CEO of Centered as a guest speaker, a midnight Among Us mini game, and many more informative workshops and fun gathering events.' },
+            { type: 'text', text: 'One of the main differentiating factor of our hackathon was the 3-hour organizer hacking event, where the organizers had to create a hackathon project in under 3 hours. My team and I built a base-10 clock in this event using React, Tailwind, and the built-in JavaScript time module for front-end while live streaming it on Twitch.' },
+            { type: 'text', text: 'I also created all visual media for our hackathon, including the logo, swag (stickers and shirts), banners, posters, and promotional materials. The swag I created were later shipped to the winners of ClockHacks.' },
             
             { type: 'subtitle', text: 'FoodiEco' },
-            { type: 'text', text: 'People are polluting the environment for their convenience. Most people aren’t aware of what is inside their fridge, leading to food waste and compulsive buying which is detrimental to the environment. FoodiEco is the byproduct of eco-friendliness and convenience. ​The FoodiEco app, coded in Python, offers a fridge page that allows the user to have a full view of the items in their fridge, helping reduce food waste and impulse buying. There is also a recipe page that allows the user to save their own recipes to help with the organization of cooking. Moreover, there is a replacement page that informs the user of healthier and more eco-friendly replacements for certain ingredients.' },
+            { type: 'text', text: 'Winner of Best Software Project that gives users eco-friendly replacements of recipes. We used Python for backend algorithmic calculations, and Tkinter for interactive UI.' },
+            { type: 'text', text: 'This project was inspired by how people are increasingly polluting the environment for their convenience. Most people think pollution is the fault of big corporate companies and there\'s nothing they can do as an individual to make a change. However, there is one thing we have not really realized, and that is what is inside of our fridge. Ignorance of food leads to food waste and compulsive buying which is detrimental to the environment. Therefore, we created FoodiEco, the byproduct of eco-friendliness and convenience. It offers a fridge page that allows the user to have a full view of the items in their fridge, helping reduce food waste and impulse buying. There is also a recipe page that allows the user to save their own recipes to help with the organization of cooking. More, there is a replacement page that informs the user of healthier and more eco-friendly replacements for certain ingredients.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/fridge.png`, caption: 'Fridge' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/landing.png`, caption: 'Landing page' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/list.png`, caption: 'Ingredients list' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/recipe.png`, caption: 'Recipe book' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/replacement.png`, caption: 'Ingredient replacement suggestions' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/foodieco/search.png`, caption: 'Search page' },
             
             { type: 'subtitle', text: 'HealThyme' },
-           
+            { type: 'text', text: 'HealThyme uses the Azure Maps geospatial platform to integrate a geolocation feature for nearby walk-in clinics, granting users real-time accessibility to healthcare services. It is built with React.js for an interactive and responsive frontend, and Azure managing location and personal data.' },
+            { type: 'text', text: 'It takes the location of the user, and generates a map indicating each of the hospitals closest to the user as well as how many people are in line in front of them. The user interface is especially designed for ease of comparison between the different hospitals in terms of their distance and wait time. Once the user has chosen a hospital or clinic they think is the best fit for their situation, the user is able to book a time at that said hospital, saving them time, and maybe even their life. HealThyme not only appeals to people who are seeking medical help, but it also acts as a platform for hospitals. Each hospital is able to sign up and view how many people have booked appointments , and manage the patients using our website. Any changes that the hospital makes, the user/patient will also be able to see it as well.' },
            
             { type: 'subtitle', text: 'Shoebill' },
+            { type: 'text', text: 'Shoebill is a web application that tracks, detects, documents and provides solutions to gaming addiction. It\'s analytics are able to track your mental stability, mood and emotions while you game. It can help you discover trends in your temperament and learn what kind of gamer you are. Using Shoebill, we can learn what tilts you the most — and optimize and grow as a competitive gamer.' },
+            { type: 'text', text: 'Shoebill is built with React.js as the main framework, supported by a Flask Python backend. We integrated Hume’s API to detect emotions related to game addiction and rage behaviour. We also tried integrating the Zepp watch to get user\'s health data for analysis.' },
            
             { type: 'subtitle', text: "Slouchn't" },
+            { type: 'text', text: 'Slouchn’t is a posture correction software that utilizes computer vision. It first calibrates with the user to determine their correct and incorrect posture. With this collected data, the program will determine the range the user would have to meet in order to maintain a good posture. If the user does not have the right posture - straight back and neck - for a certain amount of time, the program will urge the user to adjust their posture through audio and video effects. The program also includes tips the user can keep in mind for maintaining the perfect posture.' },
+            { type: 'text', text: 'We used the opencv-python package, along with mediapipe to build our computer vision program. It prompts the webcam of the computer, which detects the motion of the person using specific body landmarks, including the shoulders, nose and eyes. The distances between these landmarks are then used to determine whether or not the person has incorrect posture. If the distance drops under a certain calculated threshold, the user is told to fix their posture before continuing their work. We also tested this on multiple people to raise the accuracy of our software' },
            
             { type: 'subtitle', text: 'Remindicine' },
             { type: 'text', text: 'It\'s common to have diseases as one ages, and medication intake is an essential part of that. However, more than 80% of patients usually miss their prescription. Remindincine aims to serve as a reminder for medication intake, for those patients who need to take various medications several times in a day (for instance, patients with uremia are usually required to take more than six types of medications daily), or individuals with memory impairment.' },
-           
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/remindicine/mechanical-drawing-v1_orig.png`, caption: 'Pill box mechanical drawing' },
+
             { type: 'subtitle', text: 'ReadBetter' },
+            { type: 'text', text: 'ReadBetter is a web application that utilizes bionic reading to help people increase their reading efficiency. Whether if it’s because you have low attention span or if you’re cramming in that last lecture before a quiz. Bionic reading is a technology of guiding people’s eyes across texts to assist in reading by providing artificial fixation points. By bolding initial letters of words with a specific rule that creates the highest efficiency in reading, it allows the reader to easily follow the text. ReadBetter accepts pdf files, image files (.jpeg, .jpg, and .png), and audio files and displays them in a bionic reading form for the users.' },
+            { type: 'text', text: 'We developed a website using HTML, CSS and JS; using Flask and Python to code the functionality. Our program is able to handle various input types: pdf, image files, audio and txt. The parsing for these -files was coded using Python libraries: EasyOCR that handles image-to-text conversion and PyPDF2 for pdf-to-text. For the audio, we incorporated the use of AssemblyAI speech-to-text API, which converts audio files to text.' },
             
             { type: 'subtitle', text: 'OStranslate' },
+            { type: 'text', text: 'OStranslate is a web application that provides quick and easy summarization and translation by allowing the user to submit numerous types of file formats including text, url, video, and audio. After uploading, OStranslate provides a brief summary of the information covered in the uploaded file, then the user can choose from 133 different languages to translate between.' },
+            { type: 'text', text: 'OStranslate is built using Python, HTML, and CSS with the Symbl.ai and Google Translate APIs.' },
             
             { type: 'subtitle', text: 'SignLingo' },
+            { type: 'text', text: 'SignLingo is a sign language translator software built using computer vision and the Blobscanner library in Processing for real-time translation between text and ASL. It incorporates error feedback mechanisms, providing users with real-time warnings for incorrect signs and an ASL cheat sheet for enhanced learning proficiency.' },
             { type: 'youtube', id: 'AVIqqDKNNUA' }, // signlingo
-            
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/signlingo/detailed_instructions.png`, caption: 'Detailed instructions page' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/signlingo/title.png`, caption: 'Title page' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/signlingo/user_manual.png`, caption: 'User manual' },
+
             { type: 'subtitle', text: 'Feed the Child' },
+            { type: 'text', text: 'Feed the Child is a 2D platformer game built using Python, Tkinter, and Pygame. It incorporates a sound and timer system, and the graphics drawn by me using Procreate and Adobe PS.' },
             { type: 'youtube', id: 'l8PHyBPLN_E' }, //feed the child
             
             { type: 'subtitle', text: 'Data Colonialism & Meta Research' },
-            { type: 'pdf', src: 'documents/data_colonialism.pdf' },
+            { type: 'text', text: 'This research paper examines the issue of data colonialism as it pertains to Meta, with a specific focus on its environmental implications. Meta’s history of data exploitation, exemplified by controversies like the Cambridge Analytica scandal and WhatsApp data sharing, underscores the pervasive societal impact of unethical data practices. Violations of user privacy not only threaten a fundamental human right but also amplify biases against marginalized groups and contribute to environmental harm through unsustainable technological development.' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/datacolonialism/infographic.png`, caption: 'Data Colonialism in Meta Infographic' },
+            { type: 'pdf', src: `${process.env.PUBLIC_URL}/documents/data_colonialism.pdf` },
             
             { type: 'title', text: 'Onshape Gallery' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/a1.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/a2.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/b1.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/b2.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/ballista_closeup1.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/ballista_closeup2.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/ballista1.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/ballista2.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/c.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/d.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/e.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/f_mechanical_drawing.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/f.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/g_mechanical_drawing.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/g.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/h.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/i.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/j.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/k.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/l.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/m.png`, caption: 'Piano Achievement Image' },
+            { type: 'image', src: `${process.env.PUBLIC_URL}/images/projects/onshape/mechanical_drawing.png`, caption: 'Piano Achievement Image' },
             
             { type: 'subtitle', text: 'Blind Box Project' },
             
-            { type: 'pdf', src: 'documents/2025_master_resume__simp_.pdf' },
+            { type: 'title', text: 'Resume' },
+            { type: 'pdf', src: `${process.env.PUBLIC_URL}/documents/2025_master_resume__simp_.pdf` },
         ]);
         setTextboxContent(""); 
     }
@@ -315,6 +379,7 @@ const GameCanvas = () => {
             { type: 'text', text: 'Caterpillar finding friends published book.' },
             { type: 'text', text: 'Published Polar Express short story.' },
             { type: 'text', text: 'My poetry & anthology.' },
+            { type: 'text', text: 'To be added...' },
         ]);
         setTextboxContent(""); 
     }
@@ -341,7 +406,7 @@ const GameCanvas = () => {
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tingzi-bridge.jpg`, caption: 'Another Bridge' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/logo.JPG`, caption: 'Logo' },
             { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/tip.jpg`, caption: 'Acute' },
-            { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, caption: 'Lungs' },
+            // { type: 'image', src: `${process.env.PUBLIC_URL}/images/photography/lungs.JPG`, caption: 'Lungs' },
         ]);
         setTextboxContent(""); 
     }
@@ -349,11 +414,11 @@ const GameCanvas = () => {
     if (clickX > metals.x && clickX < metals.x + metals.width && clickY > metals.y && clickY < metals.y + metals.height) {
         setModalContent([
             { type: 'title', text: 'Certifications and Awards'},
-            { type: 'list', text: 'Level 8 Piano First Class Honours The Royal Conservatory of Music Issued Jul 2021' },
-            { type: 'list', text: 'Certificate of Distinction Issued by University of Waterloo CEMC · Apr 2021 CCC Top 25%.' },
-            { type: 'list', text: 'Chinese Panda Cup Competition Issued by The Consulate General of the People’s Republic of China in Toronto · Aug 2017 & 2018 Second Place ' },
-            { type: 'list', text: 'Certificate of Achievement Certificate of Achievement Issued by KW Chinese School · Jun 2016 In Recognition of Academic Excellence' },
-            { type: 'list', text: 'Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement in 2018/2019 National Student Short-Story Contest ' },
+            { type: 'list', text: 'Level 8 Piano First Class Honours Issued by The Royal Conservatory of Music · Jul 2021' },
+            { type: 'list', text: 'CCC Top 25% · Certificate of Distinction Issued by University of Waterloo CEMC · Apr 2021.' },
+            { type: 'list', text: '2nd Place in National Chinese Panda Cup Competition Issued by The Consulate General of the People’s Republic of China in Toronto · Aug 2017 & 2018 ' },
+            { type: 'list', text: 'Short Story published in National Student Short-Story Contest · Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement · 2018/2019 ' },
+            { type: 'list', text: 'Certificate of Achievement In Recognition of Academic Excellence Issued by KW Chinese School · Jun 2016' },
           ]);
           setTextboxContent(""); 
     }

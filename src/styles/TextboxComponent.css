@@ -3,10 +3,10 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Transparentish background */
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   text-align: left;
-  z-index: 1000; /* Ensure above other elements */
+  z-index: 1000; 
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
 }
 

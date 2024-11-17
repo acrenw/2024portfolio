@@ -1,87 +1,111 @@
 import React from 'react';
 import '../styles/ModalComponent.css';
 
-const ModalComponent = ({ content, onClose }) => {
+function renderGalleryItem(section) {
+  if (section.type === 'image') {
     return (
-      <div className="modal-overlay">
-        <div className="modal-content">
-          <button className="modal-close-button" onClick={onClose}>
-            &times;
-          </button>
-          <div className="modal-body">
-            {content.map((section, index) => {
-              if (section.type === 'text') {
-                return <p key={index} className="text-content">{section.text}</p>;
-              }
-              if (section.type === 'list') {
-                return <p key={index} className="text-content"><ul><li>{section.text}</li></ul></p>;
-              }
-              if (section.type === 'title') {
-                return <p key={index} className="text-content"><center><b><h2>{section.text}</h2></b></center></p>;
-              }
-              if (section.type === 'subtitle') {
-                return <p key={index} className="text-content"><b><h4>{section.text}</h4></b></p>;
-              }
-              return null;
-            })}
-            {/* make this rearrange horizontally, not vertically */}
-            <div className="gallery-container"> 
-              {content.map((section, index) => {
-                if (section.type === 'image') {
-                  return (
-                    <div key={index} className="gallery-item">
-                      <div className="image-container">
-                        <img src={section.src} alt={section.alt} style={{ maxWidth: '100%', height: 'auto' }} />
-                        {section.caption && (
-                          <div className="caption">
-                            {section.caption}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  );
-                }
-                if (section.type === 'video') {
-                  return (
-                    <div key={index} className="gallery-item">
-                      <video src={section.src} alt={section.alt} controls style={{ maxWidth: '100%', height: 'auto' }}>
-                      Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  );
-                }
-                if (section.type === 'youtube') {
-                  return (
-                    <div key={index} className="gallery-item" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-                      <iframe
-                        title="YouTube Video"
-                        src={`https://www.youtube.com/embed/${section.id}`}
-                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                        allowFullScreen
-                      />
-                    </div>
-                  );
-                }
-                if (section.type === 'pdf') {
-                  return (
-                    <div key={index} className="gallery-item">
-                      <iframe
-                        src={section.src}
-                        style={{ width: '100%', height: '500px' }} // #TODO: change height maybe
-                      >
-                        This browser does not support PDFs. Please download the PDF to view it: <a href={section.src}>Download PDF</a>
-                      </iframe>
-                    </div>
-                  );
-                }
-                return null;
-              })}
-            </div>
-          </div>
-        </div>
+      <div className="image-container">
+        <img src={section.src} alt={section.alt} style={{ maxWidth: '100%', height: 'auto' }} />
+        {section.caption && <div className="caption">{section.caption}</div>}
       </div>
     );
-  };
-  
+  }
+  if (section.type === 'video') {
+    return (
+      <video src={section.src} controls style={{ maxWidth: '100%', height: 'auto' }}>
+        Your browser does not support the video tag.
+      </video>
+    );
+  }
+  if (section.type === 'youtube') {
+    return (
+      <iframe
+        title="YouTube Video"
+        src={`https://www.youtube.com/embed/${section.id}`}
+        style={{ width: '100%', height: 'auto' }}
+        allowFullScreen
+      />
+    );
+  }
+  if (section.type === 'pdf') {
+    return (
+      <iframe src={section.src} style={{ width: '100%', height: '500px' }}>
+        This browser does not support PDFs. Please download the PDF to view it: <a href={section.src}>Download PDF</a>
+      </iframe>
+    );
+  }
+  return null;
+}
+
+function renderNonGalleryItem(section) {
+  if (section.type === 'text') {
+    return <p className="text-content">{section.text}</p>;
+  }
+  if (section.type === 'list') {
+    return <ul className="text-content"><li>{section.text}</li></ul>;
+  }
+  if (section.type === 'info') {
+    return <i className="text-content">{section.text}</i>;
+  }
+  if (section.type === 'title') {
+    return <h2 className="text-content" style={{ textAlign: 'center' }}>{section.text}</h2>;
+  }
+  if (section.type === 'subtitle') {
+    return <h3 className="text-content">{section.text}</h3>;
+  }
+  return null;
+}
+
+const ModalComponent = ({ content, onClose }) => {
+  const galleryItems = [];
+  const finalContent = [];
+
+  content.forEach((section, index) => {
+    const isGalleryItem = ['image', 'video', 'youtube', 'pdf'].includes(section.type);
+
+    if (isGalleryItem) {
+      galleryItems.push(
+        <div className="gallery-item" key={index}>
+          {renderGalleryItem(section)}
+        </div>
+      );
+    } else {
+      if (galleryItems.length > 0) {
+        finalContent.push(
+          <div className="gallery-container" key={`gallery-container-${index}`}>
+            {galleryItems.slice()}
+          </div>
+        );
+        galleryItems.length = 0; 
+      }
+      finalContent.push(
+        <div key={index}>
+          {renderNonGalleryItem(section)}
+        </div>
+      );
+    }
+  });
+
+  if (galleryItems.length > 0) {
+    finalContent.push(
+      <div className="gallery-container" key="gallery-container-last">
+        {galleryItems}
+      </div>
+    );
+  }
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <button className="modal-close-button" onClick={onClose}>
+          &times;
+        </button>
+        <div className="modal-body">
+          {finalContent}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ModalComponent;
