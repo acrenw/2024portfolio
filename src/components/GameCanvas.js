@@ -479,11 +479,11 @@ const GameCanvas = () => {
     if (clickX > metals.x && clickX < metals.x + metals.width && clickY > metals.y && clickY < metals.y + metals.height) {
         setModalContent([
             { type: 'title', text: 'Certifications and Awards'},
-            { type: 'list', text: 'Level 8 Piano First Class Honours Issued by The Royal Conservatory of Music · Jul 2021' },
-            { type: 'list', text: 'CCC Top 25% · Certificate of Distinction Issued by University of Waterloo CEMC · Apr 2021.' },
-            { type: 'list', text: '2nd Place in National Chinese Panda Cup Competition Issued by The Consulate General of the People’s Republic of China in Toronto · Aug 2017 & 2018 ' },
-            { type: 'list', text: 'Short Story published in National Student Short-Story Contest · Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement · 2018/2019 ' },
-            { type: 'list', text: 'Certificate of Achievement In Recognition of Academic Excellence Issued by KW Chinese School · Jun 2016' },
+            { type: 'list', text: 'Level 8 Piano First Class Honours Issued by The Royal Conservatory of Music' },
+            { type: 'list', text: 'CCC Top 25% · Certificate of Distinction Issued by University of Waterloo CEMC' },
+            { type: 'list', text: '2 time 2nd place winner in National Chinese Panda Cup Competition Issued by The Consulate General of the People’s Republic of China in Toronto' },
+            { type: 'list', text: 'Short Story published in National Student Short-Story Contest · Certificate of Achievement Issued by Polar Expressions Publishing In recognition for outstanding achievement' },
+            { type: 'list', text: 'Certificate of Achievement In Recognition of Academic Excellence Issued by KW Chinese School' },
           ]);
           setTextboxContent(""); 
     }
