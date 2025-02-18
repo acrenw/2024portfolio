@@ -36,8 +36,7 @@ export const computer = {
               <>
                 <center>
                   Email: <a href="mailto:c252wang@uwaterloo.ca">c252wang@uwaterloo.ca</a> | 
-                  Phone (CA): <a href="tel:+15195773709">+1 519-577-3709</a> |
-                  Phone (JP): <a href="tel:+15195773709">+86 080-5661-4359</a> |
+                  Phone: <a href="tel:+2266987985">+1 226-698-7985</a> |
                   ~ <a href="https://www.linkedin.com/in/cera-wang-171699240/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
                   ~ <a href="https://github.com/acrenw" target="_blank" rel="noopener noreferrer">Github</a>
                 </center>

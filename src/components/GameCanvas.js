@@ -111,7 +111,7 @@ const GameCanvas = () => {
 
   //  ------------------------------ Draw stuff ------------------------------ 
   useEffect(() => {
-    setTextboxContent("Interact/learn about ME by clicking on any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | +1 519-577-3709 | +86 080-5661-4359\nP.S. You can find more details on my computer.");
+    setTextboxContent("Interact/learn about ME by clicking on any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | +1 226-698-7985 \nP.S. You can find more details on my computer.");
     // setTextboxContent("Interact/learn about ME by clicking on or pressing 'Z' near any glowing object! I'm a computer engineering student at the University of Waterloo actively looking for jobs, contact me here:\n\nc252wang@uwaterloo.ca | +1 519-577-3709 | +86 080-5661-4359\nP.S. You can find more details on my computer.");
   }, []);
 
